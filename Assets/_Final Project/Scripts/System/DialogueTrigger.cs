@@ -35,7 +35,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (DialogueUI.Instance != null)
         {
-            DialogueUI.Instance.StartDialogue(lines);
+            //DialogueUI.Instance.StartDialogue(lines);
         }
         else
         {

@@ -23,6 +23,8 @@ public class DialogueUI : MonoBehaviour
     private Coroutine typingCoroutine;
 
     public event Action OnDialogueFinished;
+    private Action onDialogueFinishedCallback;
+
 
     private void Awake()
     {
@@ -34,16 +36,16 @@ public class DialogueUI : MonoBehaviour
         skipButton.onClick.AddListener(OnSkipClicked);
     }
 
-    public void StartDialogue(List<string> dialogueLines)
+    public void StartDialogue(List<string> lines, Action onDialogueFinished)
     {
-        if (dialogueLines == null || dialogueLines.Count == 0)
+        if (lines == null || lines.Count == 0)
         {
             Debug.LogWarning("DialogueUI: empty dialogueLines");
             OnDialogueFinished?.Invoke();
             return;
         }
 
-        lines = new List<string>(dialogueLines);
+        this.lines = new List<string>(lines);
         index = 0;
         panel.SetActive(true);
         ShowLine(index);
@@ -55,6 +57,8 @@ public class DialogueUI : MonoBehaviour
             player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
+        this.onDialogueFinishedCallback = onDialogueFinished;
+
     }
 
     private void ShowLine(int i)
@@ -111,7 +115,12 @@ public class DialogueUI : MonoBehaviour
 
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-        
+        if (onDialogueFinishedCallback != null)
+        {
+            onDialogueFinishedCallback.Invoke(); // สั่ง "เริ่มสู้"
+            onDialogueFinishedCallback = null; // เคลียร์ทิ้ง
+        }
+
         OnDialogueFinished?.Invoke();
     }
 }
