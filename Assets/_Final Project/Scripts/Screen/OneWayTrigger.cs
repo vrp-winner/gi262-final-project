@@ -1,6 +1,5 @@
 using UnityEngine;
 using Unity.Cinemachine;
-using System.Collections.Generic;
 using System;
 
 public class OneWayTrigger : MonoBehaviour
@@ -18,8 +17,6 @@ public class OneWayTrigger : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private bool showDebugMessages = true;
 
-    [TextArea(2, 6)]
-    public List<string> lines = new List<string>();
 
     private bool hasTriggered = false;
 
@@ -64,11 +61,10 @@ public class OneWayTrigger : MonoBehaviour
     {
         if (DialogueUI.Instance != null)
         {
-            DialogueUI.Instance.StartDialogue(lines, StartTheBossFight);
+            DialogueUI.Instance.StartDialogue(StartTheBossFight);
         }
         else
         {
-            Debug.LogWarning("DialogueTrigger: DialogueUI.Instance is null");
             StartTheBossFight();
         }
     }

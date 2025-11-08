@@ -1,5 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class BossController : MonoBehaviour
 {
@@ -7,32 +10,64 @@ public class BossController : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private GameObject shoePrefab;
     [SerializeField] private Transform[] shoeSpawnPoints;
+    [SerializeField] private GameObject bossFightUIPanel;
 
     [Header("Attack Settings")]
     [SerializeField] private float Coodown = 3f; 
 
     
     [Header("Phase Timings (in Seconds)")]
-    [SerializeField] private float phase2StartTime = 60f;  
-    [SerializeField] private float phase3StartTime = 120f; 
-    [SerializeField] private float FightEndTime = 240f;
+    [SerializeField] private float phase2StartTime = 60f ;  
+    [SerializeField] private float phase3StartTime = 120f ; 
+    [SerializeField] private float FightEndTime = 240f ;
+
+    [Header("UI")]
+    [SerializeField] private Slider timerBarSlider;
 
     [SerializeField] private GameObject fallingShoePrefab;
     [SerializeField] private Transform[] fallingShoeSpawnPoints;
 
     private int lastAttackIndex = -1; 
     private bool isFighting = false;
-    private float fightTimer = 0f; 
+    private float fightTimer = 0f;
 
-    
+    private void Update()
+    {
+        if (isFighting)
+        {
+       
+            fightTimer += Time.deltaTime;
+
+            if (timerBarSlider != null)
+            {
+                timerBarSlider.value = fightTimer;
+            }
+
+            if (fightTimer >= FightEndTime)
+            {
+                EndBossFight();
+            }
+        }
+    }
     public void StartBossFight()
     {
         if (isFighting) return;
+
+        if (bossFightUIPanel != null)
+        {
+            bossFightUIPanel.SetActive(true);
+        }
 
         isFighting = true;
         fightTimer = 0f; 
         lastAttackIndex = -1; 
         Debug.Log("BOSS FIGHT HAS BEGUN!");
+        if (timerBarSlider != null)
+        {
+            timerBarSlider.maxValue = FightEndTime;
+            timerBarSlider.value = 0;
+            
+        }
         StartCoroutine(AttackLoop());
     }
 
@@ -61,11 +96,8 @@ public class BossController : MonoBehaviour
             }
        
             yield return new WaitForSeconds(Coodown);
-                      fightTimer += Coodown;
-            if (fightTimer >= FightEndTime)
-            {
-                EndBossFight();
-            }
+                    
+           
         }
     }
 
@@ -106,7 +138,9 @@ public class BossController : MonoBehaviour
     {
         isFighting = false;
         Debug.Log("BOSS FIGHT ENDED! (Time limit reached)");
-        gameObject.SetActive(false); 
+        gameObject.SetActive(false);
+        Time.timeScale = 0f;
+        SceneManager.LoadScene("EndingScene");
     }
 
 

@@ -1,126 +1,135 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System.Collections.Generic;
+using System;
 
 public class DialogueUI : MonoBehaviour
 {
     public static DialogueUI Instance { get; private set; }
 
-    [Header("UI refs")]
-    public GameObject panel;
-    public TMP_Text dialogueText;
-    public Button nextButton;
-    public Button skipButton;
+    public DialogueTree tree;
+    public DialogueNode currentNode;
 
-    [Header("Settings")]
-    public float typeSpeed = 0.01f;
+    [Header("UI References")]
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private TextMeshProUGUI speakerNameText;
+    [SerializeField] private TextMeshProUGUI dialogueText;
 
-    private List<string> lines = new List<string>();
-    private int index = 0;
-    private Coroutine typingCoroutine;
 
-    public event Action OnDialogueFinished;
+    [Header("Manual Buttons")]
+    [SerializeField] private GameObject choiceButton1;
+    [SerializeField] private GameObject choiceButton2; 
+
+    private Button button1;
+    private TextMeshProUGUI button1_Text;
+    private Button button2;
+    private TextMeshProUGUI button2_Text;
+
     private Action onDialogueFinishedCallback;
-
+    private List<string> currentChoiceKeys;
 
     private void Awake()
     {
-        if (Instance != null && Instance != this) Destroy(gameObject);
-        Instance = this;
-        panel.SetActive(false);
+        if (Instance != null) { Destroy(gameObject); }
+        else { Instance = this; }
 
-        nextButton.onClick.AddListener(OnNextClicked);
-        skipButton.onClick.AddListener(OnSkipClicked);
+        LoadConversation();
+
+        if (choiceButton1 != null)
+        {
+            button1 = choiceButton1.GetComponent<Button>();
+            button1_Text = choiceButton1.GetComponentInChildren<TextMeshProUGUI>();
+        }
+        if (choiceButton2 != null)
+        {
+            button2 = choiceButton2.GetComponent<Button>();
+            button2_Text = choiceButton2.GetComponentInChildren<TextMeshProUGUI>();
+        }
+
+        dialoguePanel.SetActive(false);
     }
 
-    public void StartDialogue(List<string> lines, Action onDialogueFinished)
+    private void LoadConversation()
     {
-        if (lines == null || lines.Count == 0)
-        {
-            Debug.LogWarning("DialogueUI: empty dialogueLines");
-            OnDialogueFinished?.Invoke();
-            return;
-        }
+        tree = new DialogueTree();
+        DialogueNode start = new DialogueNode("...", "Boss");
+        DialogueNode playerReply = new DialogueNode("...", "Player");
+        DialogueNode bossFinal = new DialogueNode("...", "Boss");
+        tree.rootNode = start;
+        start.AddChoice("... (ตอบแบบที่ 1) ...", playerReply);
+        start.AddChoice("... (ตอบแบบที่ 2) ...", bossFinal);
+        playerReply.AddChoice("... (ตอบกลับ) ...", bossFinal);
+    }
 
-        this.lines = new List<string>(lines);
-        index = 0;
-        panel.SetActive(true);
-        ShowLine(index);
-        
-        Player player = FindFirstObjectByType<Player>();
-        if (player != null)
-        {
-            player.canMove = false;
-            player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        }
+    public void StartDialogue(Action onDialogueFinished)
+    {
         this.onDialogueFinishedCallback = onDialogueFinished;
+        currentNode = tree.rootNode;
 
+        dialoguePanel.SetActive(true);
+        ShowNode(currentNode);
     }
 
-    private void ShowLine(int i)
+    private void ShowNode(DialogueNode node)
     {
-        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
-        typingCoroutine = StartCoroutine(TypeLine(lines[i]));
-    }
+        currentNode = node;
+        speakerNameText.text = node.speakerName;
+        dialogueText.text = node.dialogueText;
 
-    private IEnumerator TypeLine(string line)
-    {
-        dialogueText.text = "";
-        foreach (char c in line)
+        button1.onClick.RemoveAllListeners();
+        button2.onClick.RemoveAllListeners();
+
+        choiceButton1.SetActive(false);
+        choiceButton2.SetActive(false);
+
+        currentChoiceKeys = new List<string>(node.nexts.Keys);
+
+        if (currentChoiceKeys.Count > 0)
         {
-            dialogueText.text += c;
-            yield return new WaitForSeconds(typeSpeed);
+            choiceButton1.SetActive(true); 
+            button1_Text.text = currentChoiceKeys[0];
+            button1.onClick.AddListener(() =>
+            { 
+                SelectChoice(0); 
+            });
         }
-        typingCoroutine = null;
+
+        
+        if (currentChoiceKeys.Count > 1)
+        {
+            choiceButton2.SetActive(true);
+            button2_Text.text = currentChoiceKeys[1]; 
+            button2.onClick.AddListener(() => { 
+                SelectChoice(1); 
+            });
+        }
     }
 
-    private void OnNextClicked()
+    
+    public void SelectChoice(int index)
     {
-        if (typingCoroutine != null)
+        if (index < 0 || index >= currentChoiceKeys.Count) return;
+        string choiceKey = currentChoiceKeys[index];
+        DialogueNode nextNode = currentNode.nexts[choiceKey];
+        if (nextNode.nexts.Count == 0)
         {
-            StopCoroutine(typingCoroutine);
-            dialogueText.text = lines[index];
-            typingCoroutine = null;
-            return;
-        }
-
-        index++;
-        if (index >= lines.Count)
-        {
+            ShowNode(nextNode);
             EndDialogue();
         }
         else
         {
-            ShowLine(index);
+            ShowNode(nextNode);
         }
-    }
-
-    private void OnSkipClicked()
-    {
-        EndDialogue();
     }
 
     private void EndDialogue()
     {
-        panel.SetActive(false);
-        
-        Player player = FindFirstObjectByType<Player>();
-        if (player != null)
-        {
-            player.canMove = true;
-
-            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-        }
+        dialoguePanel.SetActive(false);
         if (onDialogueFinishedCallback != null)
         {
-            onDialogueFinishedCallback.Invoke(); // สั่ง "เริ่มสู้"
-            onDialogueFinishedCallback = null; // เคลียร์ทิ้ง
+            onDialogueFinishedCallback.Invoke();
+            onDialogueFinishedCallback = null;
         }
-
-        OnDialogueFinished?.Invoke();
     }
 }

@@ -12,12 +12,12 @@ public class BossFightManager : MonoBehaviour
 
     private void Start()
     {
-        DialogueUI.Instance.OnDialogueFinished += OnDialogueCompleteFromUI;
+        //DialogueUI.Instance.OnDialogueFinished += OnDialogueCompleteFromUI;
     }
     
     private void OnDialogueCompleteFromUI()
     {
-        DialogueUI.Instance.OnDialogueFinished -= OnDialogueCompleteFromUI;
+        //DialogueUI.Instance.OnDialogueFinished -= OnDialogueCompleteFromUI;
         
         boss.HideBoss();
         StartFight(); 
