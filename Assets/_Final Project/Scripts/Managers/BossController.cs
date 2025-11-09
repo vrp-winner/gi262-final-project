@@ -88,7 +88,7 @@ public class BossController : MonoBehaviour
                     StartCoroutine(Attack1_Shoe());
                     break;
                 case 2:
-                    Attack2_Placeholder();
+                    FallingShoe();
                     break;
                 case 3:
                     Attack3_Placeholder();
@@ -166,11 +166,11 @@ public class BossController : MonoBehaviour
         yield return null;
     }
 
-    private void Attack2_Placeholder()
+    private void FallingShoe()
     {
         if (fallingShoePrefab == null || fallingShoeSpawnPoints.Length == 0)
         {
-            Debug.LogWarning("Attack 2 is not set up! Check Prefab/SpawnPoints in Inspector.");
+            Debug.Log("Boss uses Attack 2: FallingShoe!");
             return;
         }
 
