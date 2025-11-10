@@ -26,7 +26,7 @@ public class DialogueTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             hasTriggered = true;
-            Debug.Log("Player entered Boss trigger — starting dialogue");
+            //Debug.Log("Player entered Boss trigger — starting dialogue");
             TriggerDialogue();
         }
     }
@@ -39,7 +39,7 @@ public class DialogueTrigger : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("DialogueTrigger: DialogueUI.Instance is null");
+            //Debug.LogWarning("DialogueTrigger: DialogueUI.Instance is null");
         }
     }
 }

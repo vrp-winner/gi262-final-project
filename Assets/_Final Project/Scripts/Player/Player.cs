@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
 
+    [Header("Interaction")]
+    [SerializeField] private float interactRadius = 1.5f; 
+    [SerializeField] private LayerMask interactableLayer; 
+
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheckPoint;
     [SerializeField] private float groundCheckRadius = 0.2f;
@@ -62,11 +66,31 @@ public class Player : MonoBehaviour
 
         controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
-
+        controls.Player.Interact.performed += ctx => OnInteract();
 
         controls.Player.Jump.performed += ctx => Jump();
         controls.Player.Jump.canceled += ctx => HandleVariableJump();
 
+    }
+
+    private void OnInteract()
+    {
+              Collider2D hit = Physics2D.OverlapCircle(transform.position, interactRadius, interactableLayer);
+        
+        if (hit != null)
+        {
+            IInteractable interactableObject = hit.GetComponent<IInteractable>();
+            
+            if (interactableObject != null)
+            {
+                interactableObject._Interact(); 
+            }
+        }
+    }
+    private void OnDrawGizmos() //Gizmos เหมือนเอาไว้วาดภาพจำลองให้เห็นภาพ เห็นเส้น เห็นวง ประมาณนั้น (มั้ง) แบบอันนี้ก็ให้มันทำวงกลม
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, interactRadius);
     }
 
 
@@ -180,7 +204,6 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("💀 Player died!");
         canMove = false;
         rb.velocity = Vector2.zero;
        

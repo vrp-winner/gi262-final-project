@@ -91,7 +91,7 @@ public class BossController : MonoBehaviour
                     FallingShoe();
                     break;
                 case 3:
-                    Attack3_Placeholder();
+                    Attack3();
                     break;
             }
        
@@ -180,8 +180,8 @@ public class BossController : MonoBehaviour
         }
     }
 
-    private void Attack3_Placeholder()
+    private void Attack3()
     {
-        Debug.Log("Boss uses Attack 3: Placeholder!");
+       //ยังไม่รู้จะเอาอะไรคิดไม่ออก
     }
 }

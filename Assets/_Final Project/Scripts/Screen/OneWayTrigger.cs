@@ -44,7 +44,7 @@ public class OneWayTrigger : MonoBehaviour
         if (colliderToActivate != null)
         {
             colliderToActivate.enabled = true;
-            if (showDebugMessages) Debug.Log("BLOCKER ACTIVATED!");
+            if (showDebugMessages) Debug.Log("BLOCKER!");
         }
 
         if (cinemachineConfiner != null && newCameraBoundary != null)
@@ -53,7 +53,7 @@ public class OneWayTrigger : MonoBehaviour
             cinemachineConfiner.BoundingShape2D = newCameraBoundary;
             cinemachineConfiner.InvalidateBoundingShapeCache();
             cinemachineConfiner.enabled = true;
-            if (showDebugMessages) Debug.Log($"CAMERA BOUNDARY SWITCHED TO: {newCameraBoundary.name}");
+            if (showDebugMessages) Debug.Log($"BOUNDARY SWITCHED TO: {newCameraBoundary.name}");
         }
     }
 
