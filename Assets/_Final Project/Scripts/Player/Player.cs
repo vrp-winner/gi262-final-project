@@ -103,8 +103,7 @@ public class Player : MonoBehaviour
         CheckGrounded();
         Flip();
     }
-
-    private void FixedUpdate()
+        private void FixedUpdate()
     {
         Move();
         HandleGravity();

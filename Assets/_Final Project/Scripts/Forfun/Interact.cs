@@ -8,6 +8,9 @@ public class Interact : MonoBehaviour, IInteractable
     [Header("Animation")]
     [SerializeField] private Animator animator;
 
+    [Header("Sound Effect")]
+    [SerializeField] private AudioClip interactSound; 
+    private AudioSource audioSource; 
     public void _Interact()
     {
 
@@ -21,6 +24,16 @@ public class Interact : MonoBehaviour, IInteractable
         {
             animator.SetTrigger("DoTheThing");
         }
+
+        if (audioSource != null && interactSound != null)
+        {
+             audioSource.PlayOneShot(interactSound);
+        }
+    }
+
+    private void Awake()
+    {
+          audioSource = GetComponent<AudioSource>();
     }
     [SerializeField] private GameObject interactPrompt;
 
