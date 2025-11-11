@@ -10,6 +10,9 @@ public class FallingShoe : MonoBehaviour
     [Header("Fall Logic")]
     [SerializeField] private float waitBeforeFalling = 1f; 
     private Rigidbody2D rb;
+    
+    [Header("VFX")]
+    [SerializeField] private GameObject ImpactEffect;
 
     void Start()
     {
@@ -31,7 +34,9 @@ public class FallingShoe : MonoBehaviour
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
+
     {
+        Vector2 impactPoint = collision.contacts[0].point;
         if (collision.gameObject.CompareTag("Player"))
         {
             Player player = collision.gameObject.GetComponent<Player>();
@@ -39,11 +44,24 @@ public class FallingShoe : MonoBehaviour
             {
                 player.TakeDamage(damageToDeal);
             }
+            SpawnImpactEffect(impactPoint);
             Destroy(gameObject);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Destroy(gameObject);
+            SpawnImpactEffect(impactPoint);
+
+        }
+       
+    }
+    private void SpawnImpactEffect(Vector2 position)
+    {
+       
+        if (ImpactEffect != null)
+        {
+
+            Instantiate(ImpactEffect, position, Quaternion.identity);
         }
     }
 }
