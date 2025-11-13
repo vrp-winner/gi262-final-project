@@ -166,8 +166,8 @@ public class Player : MonoBehaviour
         if ((isFacingRight && moveInput.x < 0) || (!isFacingRight && moveInput.x > 0))
         {
             isFacingRight = !isFacingRight;
-            //spriteRenderer.flipX = !isFacingRight;
-            spriteRenderer.flipX = isFacingRight;
+            spriteRenderer.flipX = !isFacingRight;
+            //spriteRenderer.flipX = isFacingRight;
 
 
         }
