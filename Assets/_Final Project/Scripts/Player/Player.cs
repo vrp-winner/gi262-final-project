@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     public bool IsDead => currentHp <= 0;
 
     private PlayerControls controls;
+    [SerializeField] private Animator anim;
 
 
     private void Awake()
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         controls = new PlayerControls();
         currentHp = maxHp;
+        anim = GetComponent<Animator>();
 
         //if (healthBarSlider != null)
         //{
@@ -101,6 +103,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         CheckGrounded();
+        Animation();
         Flip();
     }
         private void FixedUpdate()
@@ -195,11 +198,30 @@ public class Player : MonoBehaviour
             if (currentHp <= 0)
                 Die();
         }
-    } 
+    }
+
+   
+    private void Animation()
+    {
+        
+        anim.SetBool("isGrounded", isGrounded);
+
+        
+        bool isWaliking = moveInput.x != 0f;
+
+        if (isGrounded)
+        {
+           anim.SetBool("isWalking", isWaliking);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+        }
+    }
 
 
 
-       
+
 
     private void Die()
     {
