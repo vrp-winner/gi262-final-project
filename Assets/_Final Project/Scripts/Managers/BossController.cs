@@ -3,18 +3,17 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class BossController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform playerTransform;
     [SerializeField] private GameObject shoePrefab;
     [SerializeField] private Transform[] shoeSpawnPoints;
+    [SerializeField] private Transform[] shoeWaitingPoints;
     [SerializeField] private GameObject bossFightUIPanel;
 
     [Header("Attack Settings")]
     [SerializeField] private float Coodown = 3f; 
-
     
     [Header("Phase Timings (in Seconds)")]
     [SerializeField] private float phase2StartTime = 60f ;  
@@ -35,7 +34,6 @@ public class BossController : MonoBehaviour
     {
         if (isFighting)
         {
-       
             fightTimer += Time.deltaTime;
 
             if (timerBarSlider != null)
@@ -49,6 +47,7 @@ public class BossController : MonoBehaviour
             }
         }
     }
+    
     public void StartBossFight()
     {
         if (isFighting) return;
@@ -70,17 +69,13 @@ public class BossController : MonoBehaviour
         }
         StartCoroutine(AttackLoop());
     }
-
     
     private IEnumerator AttackLoop()
     {
-        
         while (isFighting)
         {
-            
             int nextAttack = ChooseNextAttack();
             lastAttackIndex = nextAttack; 
-
           
             switch (nextAttack)
             {
@@ -96,11 +91,8 @@ public class BossController : MonoBehaviour
             }
        
             yield return new WaitForSeconds(Coodown);
-                    
-           
         }
     }
-
   
     private int ChooseNextAttack()
     {
@@ -160,7 +152,9 @@ public class BossController : MonoBehaviour
         {
             Transform randomSpawnPoint = shoeSpawnPoints[Random.Range(0, shoeSpawnPoints.Length)];
             GameObject shoeInstance = Instantiate(shoePrefab, randomSpawnPoint.position, Quaternion.identity);
-            shoeInstance.GetComponent<ShoeAttack>().SetPlayerTarget(playerTransform);
+            ShoeAttack shoe = shoeInstance.GetComponent<ShoeAttack>(); 
+            shoe.SetPlayerTarget(playerTransform); 
+            shoe.SetRestPoints(shoeWaitingPoints);
             yield return new WaitForSeconds(0.2f);
         }
         yield return null;
@@ -182,6 +176,6 @@ public class BossController : MonoBehaviour
 
     private void Attack3()
     {
-       //ยังไม่รู้จะเอาอะไรคิดไม่ออก
+       //
     }
 }

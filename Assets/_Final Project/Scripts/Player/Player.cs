@@ -117,8 +117,8 @@ public class Player : MonoBehaviour
         if (!canMove || IsDead) return;
 
 
-        Vector2 velocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
-        rb.velocity = velocity;
+        Vector2 velocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = velocity;
     }
 
     private void Jump()
@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
         if (!isGrounded || !canMove || IsDead) return;
 
 
-        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
 
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
@@ -143,7 +143,7 @@ public class Player : MonoBehaviour
     private void HandleGravity()
     {
 
-        if (rb.velocity.y < 0)
+        if (rb.linearVelocity.y < 0)
         {
             rb.gravityScale = baseGravityScale * fallGravityMultiplier;
         }
@@ -155,10 +155,10 @@ public class Player : MonoBehaviour
 
     private void HandleVariableJump()
     {
-        if (rb.velocity.y > 0)
+        if (rb.linearVelocity.y > 0)
         {
 
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * JumpMultiplier);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * JumpMultiplier);
         }
     }
 
@@ -226,7 +226,7 @@ public class Player : MonoBehaviour
     private void Die()
     {
         canMove = false;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
        
         GameManager.Instance.ShowGameOverScreen(); 
         spriteRenderer.enabled = false; 
