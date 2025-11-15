@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     [Header("Game Settings")]
     [SerializeField] private bool isInstantKillMode = true;
     private float baseGravityScale;
-    private bool isFacingRight = false;
+    private bool isFacingRight = true;
 
     [Header("UI")]
     //[SerializeField] private Slider healthBarSlider;
@@ -169,8 +169,8 @@ public class Player : MonoBehaviour
         if ((isFacingRight && moveInput.x < 0) || (!isFacingRight && moveInput.x > 0))
         {
             isFacingRight = !isFacingRight;
-            spriteRenderer.flipX = !isFacingRight;
-            //spriteRenderer.flipX = isFacingRight;
+            //spriteRenderer.flipX = !isFacingRight;
+            spriteRenderer.flipX = isFacingRight;
 
 
         }
@@ -200,18 +200,18 @@ public class Player : MonoBehaviour
         }
     }
 
-   
+
     private void Animation()
     {
         
         anim.SetBool("isGrounded", isGrounded);
 
         
-        bool isWaliking = moveInput.x != 0f;
+        bool isWalking = moveInput.x != 0f;
 
         if (isGrounded)
         {
-           anim.SetBool("isWalking", isWaliking);
+            anim.SetBool("isWalking", isWalking);
         }
         else
         {

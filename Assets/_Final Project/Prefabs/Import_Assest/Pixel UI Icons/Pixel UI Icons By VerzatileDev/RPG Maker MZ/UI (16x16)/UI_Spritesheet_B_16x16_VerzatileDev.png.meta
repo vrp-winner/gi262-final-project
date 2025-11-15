@@ -1,0 +1,1573 @@
+fileFormatVersion: 2
+guid: ef9ef86ba8349db469c5f4cb3adea4a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -601876745455363295
+    second: UI_Spritesheet_B_16x16_VerzatileDev_0
+  - first:
+      213: 3142368719877323140
+    second: UI_Spritesheet_B_16x16_VerzatileDev_1
+  - first:
+      213: -9183733431235198044
+    second: UI_Spritesheet_B_16x16_VerzatileDev_2
+  - first:
+      213: 126037495406066921
+    second: UI_Spritesheet_B_16x16_VerzatileDev_3
+  - first:
+      213: -4216823065214257043
+    second: UI_Spritesheet_B_16x16_VerzatileDev_4
+  - first:
+      213: 4932722291847282152
+    second: UI_Spritesheet_B_16x16_VerzatileDev_5
+  - first:
+      213: -4165725940399955120
+    second: UI_Spritesheet_B_16x16_VerzatileDev_6
+  - first:
+      213: 6380783530790863122
+    second: UI_Spritesheet_B_16x16_VerzatileDev_7
+  - first:
+      213: 3204570753590697584
+    second: UI_Spritesheet_B_16x16_VerzatileDev_8
+  - first:
+      213: 2052949555217672593
+    second: UI_Spritesheet_B_16x16_VerzatileDev_9
+  - first:
+      213: -8455526792291036140
+    second: UI_Spritesheet_B_16x16_VerzatileDev_10
+  - first:
+      213: 6105337982914553960
+    second: UI_Spritesheet_B_16x16_VerzatileDev_11
+  - first:
+      213: 1497839584272691934
+    second: UI_Spritesheet_B_16x16_VerzatileDev_12
+  - first:
+      213: 8250082149421131597
+    second: UI_Spritesheet_B_16x16_VerzatileDev_13
+  - first:
+      213: 8629400704059273631
+    second: UI_Spritesheet_B_16x16_VerzatileDev_14
+  - first:
+      213: 6803378183945511905
+    second: UI_Spritesheet_B_16x16_VerzatileDev_15
+  - first:
+      213: 6467662196753392995
+    second: UI_Spritesheet_B_16x16_VerzatileDev_16
+  - first:
+      213: 4703092226861072345
+    second: UI_Spritesheet_B_16x16_VerzatileDev_17
+  - first:
+      213: 2869890084583359577
+    second: UI_Spritesheet_B_16x16_VerzatileDev_18
+  - first:
+      213: 5866237103895609540
+    second: UI_Spritesheet_B_16x16_VerzatileDev_19
+  - first:
+      213: 1148767689638010605
+    second: UI_Spritesheet_B_16x16_VerzatileDev_20
+  - first:
+      213: 1506419940872670780
+    second: UI_Spritesheet_B_16x16_VerzatileDev_21
+  - first:
+      213: 8539244736744993230
+    second: UI_Spritesheet_B_16x16_VerzatileDev_22
+  - first:
+      213: -4779364006066404622
+    second: UI_Spritesheet_B_16x16_VerzatileDev_23
+  - first:
+      213: -4010437932918466569
+    second: UI_Spritesheet_B_16x16_VerzatileDev_24
+  - first:
+      213: 8172390488666070809
+    second: UI_Spritesheet_B_16x16_VerzatileDev_25
+  - first:
+      213: -990883650794793992
+    second: UI_Spritesheet_B_16x16_VerzatileDev_26
+  - first:
+      213: 8022745841094987223
+    second: UI_Spritesheet_B_16x16_VerzatileDev_27
+  - first:
+      213: -5070959574691992733
+    second: UI_Spritesheet_B_16x16_VerzatileDev_28
+  - first:
+      213: -8609156844889500787
+    second: UI_Spritesheet_B_16x16_VerzatileDev_29
+  - first:
+      213: -843833078430486704
+    second: UI_Spritesheet_B_16x16_VerzatileDev_30
+  - first:
+      213: -6201977869938319183
+    second: UI_Spritesheet_B_16x16_VerzatileDev_31
+  - first:
+      213: -1390365549383800505
+    second: UI_Spritesheet_B_16x16_VerzatileDev_32
+  - first:
+      213: -3195990699087550254
+    second: UI_Spritesheet_B_16x16_VerzatileDev_33
+  - first:
+      213: 6584868925648649803
+    second: UI_Spritesheet_B_16x16_VerzatileDev_34
+  - first:
+      213: 5549131227219836377
+    second: UI_Spritesheet_B_16x16_VerzatileDev_35
+  - first:
+      213: -4790681431382520877
+    second: UI_Spritesheet_B_16x16_VerzatileDev_36
+  - first:
+      213: 6724748710032090652
+    second: UI_Spritesheet_B_16x16_VerzatileDev_37
+  - first:
+      213: -3158952352448459095
+    second: UI_Spritesheet_B_16x16_VerzatileDev_38
+  - first:
+      213: -4736953865983385399
+    second: UI_Spritesheet_B_16x16_VerzatileDev_39
+  - first:
+      213: 6549015584402388822
+    second: UI_Spritesheet_B_16x16_VerzatileDev_40
+  - first:
+      213: -6753695072117396923
+    second: UI_Spritesheet_B_16x16_VerzatileDev_41
+  - first:
+      213: -95166755741077879
+    second: UI_Spritesheet_B_16x16_VerzatileDev_42
+  - first:
+      213: -7067033997363578937
+    second: UI_Spritesheet_B_16x16_VerzatileDev_43
+  - first:
+      213: -2444209651471454562
+    second: UI_Spritesheet_B_16x16_VerzatileDev_44
+  - first:
+      213: 7720490093777590868
+    second: UI_Spritesheet_B_16x16_VerzatileDev_45
+  - first:
+      213: 6547418760245210336
+    second: UI_Spritesheet_B_16x16_VerzatileDev_46
+  - first:
+      213: 664901034356764166
+    second: UI_Spritesheet_B_16x16_VerzatileDev_47
+  - first:
+      213: 8663571758248987577
+    second: UI_Spritesheet_B_16x16_VerzatileDev_48
+  - first:
+      213: -597411350876999567
+    second: UI_Spritesheet_B_16x16_VerzatileDev_49
+  - first:
+      213: -7397440440379589512
+    second: UI_Spritesheet_B_16x16_VerzatileDev_50
+  - first:
+      213: 3493646635878126253
+    second: UI_Spritesheet_B_16x16_VerzatileDev_51
+  - first:
+      213: 9167657231345911944
+    second: UI_Spritesheet_B_16x16_VerzatileDev_52
+  - first:
+      213: 2356116774127770182
+    second: UI_Spritesheet_B_16x16_VerzatileDev_53
+  - first:
+      213: 5784907534623472569
+    second: UI_Spritesheet_B_16x16_VerzatileDev_54
+  - first:
+      213: 2120570583737326523
+    second: UI_Spritesheet_B_16x16_VerzatileDev_55
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 114
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b9094f944b5a7f0800000000000000
+      internalID: -601876745455363295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 115
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4893695a3bfeb9b20800000000000000
+      internalID: 3142368719877323140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 115
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3c85f0a13dc8080800000000000000
+      internalID: -9183733431235198044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 115
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ecfe0e2f66cfb100800000000000000
+      internalID: 126037495406066921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_4
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 115
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68fa3d83c5da75c0800000000000000
+      internalID: -4216823065214257043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_5
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 115
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ed353d2acc847440800000000000000
+      internalID: 4932722291847282152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_6
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 115
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 053a4d2045e5036c0800000000000000
+      internalID: -4165725940399955120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 98
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 211c37d70d81d8850800000000000000
+      internalID: 6380783530790863122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 83
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07e11613f1ce87c20800000000000000
+      internalID: 3204570753590697584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_9
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 66
+        width: 10
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 199ab845eba8d7c10800000000000000
+      internalID: 2052949555217672593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_10
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 99
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 414d1b48e2fe7aa80800000000000000
+      internalID: -8455526792291036140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_11
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 99
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86862594c848ab450800000000000000
+      internalID: 6105337982914553960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_12
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 99
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed2b71f7a2569c410800000000000000
+      internalID: 1497839584272691934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_13
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 99
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d47a90c010e2e7270800000000000000
+      internalID: 8250082149421131597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_14
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 99
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9175f5483ac1c770800000000000000
+      internalID: 8629400704059273631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 82
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e3e6b699647a6e50800000000000000
+      internalID: 6803378183945511905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_16
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 83
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36565b43080c1c950800000000000000
+      internalID: 6467662196753392995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_17
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 83
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df74f7567db44140800000000000000
+      internalID: 4703092226861072345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_18
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 82
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 954c10c93d5e3d720800000000000000
+      internalID: 2869890084583359577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_19
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 82
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c00ae9b09f096150800000000000000
+      internalID: 5866237103895609540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_20
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 84
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deed156902e31ff00800000000000000
+      internalID: 1148767689638010605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 66
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ec74274f0e7e410800000000000000
+      internalID: 1506419940872670780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_22
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 67
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec13fcf58dd718670800000000000000
+      internalID: 8539244736744993230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_23
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 67
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2cf1632c94cadb0800000000000000
+      internalID: -4779364006066404622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_24
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 67
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f794aeb2ff0858c0800000000000000
+      internalID: -4010437932918466569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_25
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 66
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91fd8baa9d92a6170800000000000000
+      internalID: 8172390488666070809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_26
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 66
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f352acc19caf32f0800000000000000
+      internalID: -990883650794793992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_27
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 68
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dd85bd06d4865f60800000000000000
+      internalID: 8022745841094987223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_28
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 52
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b2e18422550a9b0800000000000000
+      internalID: -5070959574691992733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_29
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 51
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d831dbc7671268880800000000000000
+      internalID: -8609156844889500787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_30
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 50
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05f2d66394a1a44f0800000000000000
+      internalID: -843833078430486704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_31
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 50
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b02e7d9cf52ee9a0800000000000000
+      internalID: -6201977869938319183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_32
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 51
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 749a90936ed64bce0800000000000000
+      internalID: -1390365549383800505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_33
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 50
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d82f6b646f85a3d0800000000000000
+      internalID: -3195990699087550254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_34
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 50
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ebbc55667226b50800000000000000
+      internalID: 6584868925648649803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_35
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 36
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd377a5379720d40800000000000000
+      internalID: 5549131227219836377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_36
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 35
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db826ace94148db0800000000000000
+      internalID: -4790681431382520877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_37
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 34
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16aa31925b135d50800000000000000
+      internalID: 6724748710032090652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_38
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 34
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aecce182952924d0800000000000000
+      internalID: -3158952352448459095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_39
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 34
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c0a5ac6e85f24eb0800000000000000
+      internalID: -4736953865983385399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_40
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 33
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6573dc0d9f6c2ea50800000000000000
+      internalID: 6549015584402388822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_41
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 34
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ae2215d1e0642a0800000000000000
+      internalID: -6753695072117396923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_42
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 19
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e60a10756edaef0800000000000000
+      internalID: -95166755741077879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_43
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 2
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c7f88ba50adced90800000000000000
+      internalID: -7067033997363578937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_44
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 18
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e667f954c641ed0800000000000000
+      internalID: -2444209651471454562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_45
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 18
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a198bd5d0b42b60800000000000000
+      internalID: 7720490093777590868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_46
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 18
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ece4283caa1dda50800000000000000
+      internalID: 6547418760245210336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_47
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 18
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60eef9bc7f33a3900800000000000000
+      internalID: 664901034356764166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_48
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 18
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb8980dc903b3870800000000000000
+      internalID: 8663571758248987577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_49
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170b036aa8195b7f0800000000000000
+      internalID: -597411350876999567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_50
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87cb010ec13075990800000000000000
+      internalID: -7397440440379589512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_51
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 2
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2114eea1deb7030800000000000000
+      internalID: 3493646635878126253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_52
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 2
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8880ae8fdaf0a3f70800000000000000
+      internalID: 9167657231345911944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_53
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 2
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a993b09bb92b020800000000000000
+      internalID: 2356116774127770182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_54
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 2
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb76b3c0ce184050800000000000000
+      internalID: 5784907534623472569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Spritesheet_B_16x16_VerzatileDev_55
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 2
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb5ecce5b7cd6d10800000000000000
+      internalID: 2120570583737326523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      UI_Spritesheet_B_16x16_VerzatileDev_0: -601876745455363295
+      UI_Spritesheet_B_16x16_VerzatileDev_1: 3142368719877323140
+      UI_Spritesheet_B_16x16_VerzatileDev_10: -8455526792291036140
+      UI_Spritesheet_B_16x16_VerzatileDev_11: 6105337982914553960
+      UI_Spritesheet_B_16x16_VerzatileDev_12: 1497839584272691934
+      UI_Spritesheet_B_16x16_VerzatileDev_13: 8250082149421131597
+      UI_Spritesheet_B_16x16_VerzatileDev_14: 8629400704059273631
+      UI_Spritesheet_B_16x16_VerzatileDev_15: 6803378183945511905
+      UI_Spritesheet_B_16x16_VerzatileDev_16: 6467662196753392995
+      UI_Spritesheet_B_16x16_VerzatileDev_17: 4703092226861072345
+      UI_Spritesheet_B_16x16_VerzatileDev_18: 2869890084583359577
+      UI_Spritesheet_B_16x16_VerzatileDev_19: 5866237103895609540
+      UI_Spritesheet_B_16x16_VerzatileDev_2: -9183733431235198044
+      UI_Spritesheet_B_16x16_VerzatileDev_20: 1148767689638010605
+      UI_Spritesheet_B_16x16_VerzatileDev_21: 1506419940872670780
+      UI_Spritesheet_B_16x16_VerzatileDev_22: 8539244736744993230
+      UI_Spritesheet_B_16x16_VerzatileDev_23: -4779364006066404622
+      UI_Spritesheet_B_16x16_VerzatileDev_24: -4010437932918466569
+      UI_Spritesheet_B_16x16_VerzatileDev_25: 8172390488666070809
+      UI_Spritesheet_B_16x16_VerzatileDev_26: -990883650794793992
+      UI_Spritesheet_B_16x16_VerzatileDev_27: 8022745841094987223
+      UI_Spritesheet_B_16x16_VerzatileDev_28: -5070959574691992733
+      UI_Spritesheet_B_16x16_VerzatileDev_29: -8609156844889500787
+      UI_Spritesheet_B_16x16_VerzatileDev_3: 126037495406066921
+      UI_Spritesheet_B_16x16_VerzatileDev_30: -843833078430486704
+      UI_Spritesheet_B_16x16_VerzatileDev_31: -6201977869938319183
+      UI_Spritesheet_B_16x16_VerzatileDev_32: -1390365549383800505
+      UI_Spritesheet_B_16x16_VerzatileDev_33: -3195990699087550254
+      UI_Spritesheet_B_16x16_VerzatileDev_34: 6584868925648649803
+      UI_Spritesheet_B_16x16_VerzatileDev_35: 5549131227219836377
+      UI_Spritesheet_B_16x16_VerzatileDev_36: -4790681431382520877
+      UI_Spritesheet_B_16x16_VerzatileDev_37: 6724748710032090652
+      UI_Spritesheet_B_16x16_VerzatileDev_38: -3158952352448459095
+      UI_Spritesheet_B_16x16_VerzatileDev_39: -4736953865983385399
+      UI_Spritesheet_B_16x16_VerzatileDev_4: -4216823065214257043
+      UI_Spritesheet_B_16x16_VerzatileDev_40: 6549015584402388822
+      UI_Spritesheet_B_16x16_VerzatileDev_41: -6753695072117396923
+      UI_Spritesheet_B_16x16_VerzatileDev_42: -95166755741077879
+      UI_Spritesheet_B_16x16_VerzatileDev_43: -7067033997363578937
+      UI_Spritesheet_B_16x16_VerzatileDev_44: -2444209651471454562
+      UI_Spritesheet_B_16x16_VerzatileDev_45: 7720490093777590868
+      UI_Spritesheet_B_16x16_VerzatileDev_46: 6547418760245210336
+      UI_Spritesheet_B_16x16_VerzatileDev_47: 664901034356764166
+      UI_Spritesheet_B_16x16_VerzatileDev_48: 8663571758248987577
+      UI_Spritesheet_B_16x16_VerzatileDev_49: -597411350876999567
+      UI_Spritesheet_B_16x16_VerzatileDev_5: 4932722291847282152
+      UI_Spritesheet_B_16x16_VerzatileDev_50: -7397440440379589512
+      UI_Spritesheet_B_16x16_VerzatileDev_51: 3493646635878126253
+      UI_Spritesheet_B_16x16_VerzatileDev_52: 9167657231345911944
+      UI_Spritesheet_B_16x16_VerzatileDev_53: 2356116774127770182
+      UI_Spritesheet_B_16x16_VerzatileDev_54: 5784907534623472569
+      UI_Spritesheet_B_16x16_VerzatileDev_55: 2120570583737326523
+      UI_Spritesheet_B_16x16_VerzatileDev_6: -4165725940399955120
+      UI_Spritesheet_B_16x16_VerzatileDev_7: 6380783530790863122
+      UI_Spritesheet_B_16x16_VerzatileDev_8: 3204570753590697584
+      UI_Spritesheet_B_16x16_VerzatileDev_9: 2052949555217672593
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
