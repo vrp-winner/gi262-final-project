@@ -1,5 +1,7 @@
 using UnityEngine;
 using Unity.Cinemachine;
+using System.Collections; 
+using System.Collections.Generic;
 using System;
 
 public class OneWayTrigger : MonoBehaviour
@@ -11,12 +13,19 @@ public class OneWayTrigger : MonoBehaviour
     [SerializeField] private CinemachineConfiner2D cinemachineConfiner;
     [SerializeField] private Collider2D newCameraBoundary;
 
+    [SerializeField] private CinemachineCamera virtualCamera; 
+    [SerializeField] private float bossFightZoomSize = 8f; 
+
     [Header("Boss Trigger")]
     [SerializeField] private BossController bossToTrigger;
 
     [Header("Debug")]
     [SerializeField] private bool showDebugMessages = true;
 
+    [Header("VFX")]
+    [SerializeField] private GameObject NormalMom; 
+    [SerializeField] private GameObject VFXPrefab; 
+    [SerializeField] private float revealWaitTime = 1.5f; 
 
     private bool hasTriggered = false;
 
@@ -25,6 +34,16 @@ public class OneWayTrigger : MonoBehaviour
         if (colliderToActivate != null)
         {
             colliderToActivate.enabled = false;
+        }
+
+        if (NormalMom != null)
+        {
+            NormalMom.SetActive(true);
+        }
+        
+        if (bossToTrigger != null)
+        {
+            bossToTrigger.gameObject.SetActive(false);
         }
     }
 
@@ -35,25 +54,60 @@ public class OneWayTrigger : MonoBehaviour
             hasTriggered = true;
             LockTheRoom();
             TriggerDialogue();
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+
+
         }
+    }
+    private IEnumerator BossSequence()
+    {
+        
+
+        if (NormalMom != null)
+        {
+            NormalMom.SetActive(false);
+        }
+
+        if (VFXPrefab != null)
+        {
+            Vector3 spawnPos = (bossToTrigger != null) ? bossToTrigger.transform.position : transform.position;
+            Instantiate(VFXPrefab, spawnPos, Quaternion.identity);
+        }
+
+        yield return new WaitForSeconds(revealWaitTime);
+
+        if (bossToTrigger != null)
+        {
+            bossToTrigger.gameObject.SetActive(true);
+        }
+
+        StartTheBossFight();
+        gameObject.SetActive(false);
     }
 
     private void LockTheRoom()
     {
-        if (colliderToActivate != null)
         {
-            colliderToActivate.enabled = true;
-            if (showDebugMessages) Debug.Log("BLOCKER!");
-        }
+            
+            if (colliderToActivate != null)
+            {
+                colliderToActivate.enabled = true;
+                if (showDebugMessages) Debug.Log("BLOCKER ACTIVATED!");
+            }
 
-        if (cinemachineConfiner != null && newCameraBoundary != null)
-        {
-            cinemachineConfiner.enabled = false;
-            cinemachineConfiner.BoundingShape2D = newCameraBoundary;
-            cinemachineConfiner.InvalidateBoundingShapeCache();
-            cinemachineConfiner.enabled = true;
-            if (showDebugMessages) Debug.Log($"BOUNDARY SWITCHED TO: {newCameraBoundary.name}");
+            if (cinemachineConfiner != null && newCameraBoundary != null)
+            {
+                cinemachineConfiner.enabled = false;
+                cinemachineConfiner.BoundingShape2D = newCameraBoundary;
+                cinemachineConfiner.InvalidateBoundingShapeCache();
+                cinemachineConfiner.enabled = true;
+                if (showDebugMessages) Debug.Log($"CAMERA BOUNDARY SWITCHED TO: {newCameraBoundary.name}");
+            }
+            if (virtualCamera != null)
+            {
+               
+                virtualCamera.Lens.OrthographicSize = bossFightZoomSize;
+            }
         }
     }
 
@@ -61,14 +115,18 @@ public class OneWayTrigger : MonoBehaviour
     {
         if (DialogueUI.Instance != null)
         {
-            DialogueUI.Instance.StartDialogue(StartTheBossFight);
+            DialogueUI.Instance.StartDialogue(OnDialogueFinished);
         }
         else
         {
-            StartTheBossFight();
+            OnDialogueFinished();
         }
     }
 
+    public void OnDialogueFinished()
+    {
+        StartCoroutine(BossSequence());
+    }
     public void StartTheBossFight()
     {
         if (showDebugMessages)

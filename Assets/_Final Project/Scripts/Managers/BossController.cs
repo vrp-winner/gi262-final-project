@@ -7,13 +7,26 @@ public class BossController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform playerTransform;
+    
+    [Header("Attack 1 (Shoe)")]
     [SerializeField] private GameObject shoePrefab;
     [SerializeField] private Transform[] shoeSpawnPoints;
     [SerializeField] private Transform[] shoeWaitingPoints;
-    [SerializeField] private GameObject bossFightUIPanel;
-
-    [Header("Attack Settings")]
-    [SerializeField] private float Coodown = 3f; 
+    [SerializeField] private float Coodown = 3f;
+   
+    [Header("Attack 2 (FallingShoe)")]
+    [SerializeField] private GameObject fallingShoePrefab;
+    [SerializeField] private Transform[] fallingShoeSpawnPoints;
+    
+    [Header("Attack 3 (ShoeDrops)")]
+    [SerializeField] private GameObject Indicator; 
+    [SerializeField] private GameObject ShoeDropPrefab;      
+    [SerializeField] private Transform DropSpawnPoint_Left;  
+    [SerializeField] private Transform DropSpawnPoint_Right; 
+    [SerializeField] private float DropSpawnWidth = 10f;
+    [SerializeField] private float DropWarningDuration = 2f; 
+    [SerializeField] private float attack3Duration = 8f;    
+    [SerializeField] private float DropRate = 0.2f;
     
     [Header("Phase Timings (in Seconds)")]
     [SerializeField] private float phase2StartTime = 60f ;  
@@ -22,9 +35,8 @@ public class BossController : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private Slider timerBarSlider;
+    [SerializeField] private GameObject bossFightUIPanel;
 
-    [SerializeField] private GameObject fallingShoePrefab;
-    [SerializeField] private Transform[] fallingShoeSpawnPoints;
 
     private int lastAttackIndex = -1; 
     private bool isFighting = false;
@@ -75,22 +87,38 @@ public class BossController : MonoBehaviour
         while (isFighting)
         {
             int nextAttack = ChooseNextAttack();
-            lastAttackIndex = nextAttack; 
-          
-            switch (nextAttack)
+            lastAttackIndex = nextAttack;
+
+            if (nextAttack == 3)
             {
-                case 1:
-                    StartCoroutine(Attack1_Shoe());
-                    break;
-                case 2:
-                    FallingShoe();
-                    break;
-                case 3:
-                    Attack3();
-                    break;
+                
+                yield return StartCoroutine(Attack3_ShoeDrops());
             }
-       
-            yield return new WaitForSeconds(Coodown);
+
+            else
+            {
+              
+                if (nextAttack == 1) StartCoroutine(Attack1_Shoe());
+                if (nextAttack == 2) StartCoroutine(Attack2_FallingShoe());
+
+                
+                yield return new WaitForSeconds(Coodown);
+            }
+
+            //switch (nextAttack)
+            //{
+            //    case 1:
+            //        StartCoroutine(Attack1_Shoe());
+            //        break;
+            //    case 2:
+            //        FallingShoe();
+            //        break;
+            //    case 3:
+            //        Attack3();
+            //        break;
+            //}
+
+            //yield return new WaitForSeconds(Coodown);
         }
     }
   
@@ -142,7 +170,7 @@ public class BossController : MonoBehaviour
         int shoeCount = 1;
         if (fightTimer >= phase3StartTime) 
         {
-            shoeCount = 3;
+            shoeCount = 2;
         }
         else if (fightTimer >= phase2StartTime) 
         {
@@ -160,12 +188,12 @@ public class BossController : MonoBehaviour
         yield return null;
     }
 
-    private void FallingShoe()
+    private IEnumerator Attack2_FallingShoe()
     {
         if (fallingShoePrefab == null || fallingShoeSpawnPoints.Length == 0)
         {
             Debug.Log("Boss uses Attack 2: FallingShoe!");
-            return;
+            yield break;
         }
 
         foreach (Transform spawnPoint in fallingShoeSpawnPoints)
@@ -174,8 +202,44 @@ public class BossController : MonoBehaviour
         }
     }
 
-    private void Attack3()
+    private IEnumerator Attack3_ShoeDrops()
     {
-       //
+        int sideIndex = Random.Range(0, 2);
+        Transform spawnArea = (sideIndex == 0) ? DropSpawnPoint_Left : DropSpawnPoint_Right;
+
+        
+       
+        GameObject indicator = Instantiate(Indicator, spawnArea.position, Quaternion.identity);
+
+        BlinkingIndicator blinkScript = indicator.GetComponent<BlinkingIndicator>();
+        if (blinkScript != null)
+        {
+           
+            blinkScript.StartBlinking(DropWarningDuration);
+        }
+
+        
+        yield return new WaitForSeconds(DropWarningDuration);
+
+        yield return StartCoroutine(RainSide(spawnArea));
+
+        
+    }
+    private IEnumerator RainSide(Transform spawnArea)
+    {
+        float timer = 0f;
+
+        while (timer < attack3Duration)
+        {
+            
+            float randomX = Random.Range(-DropSpawnWidth / 2, DropSpawnWidth / 2);
+            Vector2 spawnPos = new Vector2(spawnArea.position.x + randomX, spawnArea.position.y);
+            
+            Instantiate(ShoeDropPrefab, spawnPos, Quaternion.identity);
+            
+            yield return new WaitForSeconds(DropRate);
+
+            timer += DropRate;
+        }
     }
 }

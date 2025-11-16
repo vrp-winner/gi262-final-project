@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     [Header("Game Settings")]
     [SerializeField] private bool isInstantKillMode = true;
     private float baseGravityScale;
-    private bool isFacingRight = true;
+    private bool isFacingRight = false;
 
     [Header("UI")]
     //[SerializeField] private Slider healthBarSlider;
