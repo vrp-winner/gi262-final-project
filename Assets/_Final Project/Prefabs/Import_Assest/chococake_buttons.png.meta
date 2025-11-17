@@ -154,16 +154,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chococake_buttons_0
+      name: chococake_dialogue_
       rect:
         serializedVersion: 2
-        x: 0
+        x: 48
         y: 48
         width: 48
-        height: 48
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 6, z: 5, w: 5}
       customData: 
       outline: []
       physicsShape: []
@@ -179,10 +179,10 @@ TextureImporter:
       name: chococake_buttons_1
       rect:
         serializedVersion: 2
-        x: 132
-        y: 101
-        width: 8
-        height: 4
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: chococake_buttons_2
       rect:
         serializedVersion: 2
-        x: 132
-        y: 71
-        width: 7
-        height: 6
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: chococake_buttons_3
       rect:
         serializedVersion: 2
-        x: 134
-        y: 85
-        width: 6
-        height: 4
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: chococake_buttons_4
       rect:
         serializedVersion: 2
-        x: 148
-        y: 86
-        width: 8
-        height: 7
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: chococake_buttons_5
       rect:
         serializedVersion: 2
-        x: 150
-        y: 118
-        width: 5
-        height: 7
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,402 +281,6 @@ TextureImporter:
       bones: []
       spriteID: 28894d8039aaa6910800000000000000
       internalID: 1831463746964592770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_6
-      rect:
-        serializedVersion: 2
-        x: 155
-        y: 69
-        width: 35
-        height: 57
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 86f9918ed2c3ded10800000000000000
-      internalID: 2156445964445523816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_7
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 118
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e64434c67b6a28140800000000000000
-      internalID: 4720518666163274862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_8
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 71
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ffbc3a18636cb8a0800000000000000
-      internalID: -6288041680948117516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_9
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 53
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7b3663d76f4944ed0800000000000000
-      internalID: -2430654112489643081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_10
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 54
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f36f6bf115feb6c40800000000000000
-      internalID: 5506758101094037055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_11
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 53
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5d097fd0c446aab90800000000000000
-      internalID: -7229855973975289643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_12
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 54
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1a196bdd22eac92a0800000000000000
-      internalID: -6729312278426512991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_13
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 21
-        width: 8
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c177101e6c4249740800000000000000
-      internalID: 5157787909843154716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_14
-      rect:
-        serializedVersion: 2
-        x: 134
-        y: 5
-        width: 6
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d54f1c1ebfc83b1e0800000000000000
-      internalID: -2183246380892294051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_15
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 6
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c051d2545349fef60800000000000000
-      internalID: 8065828414158607628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_16
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 38
-        width: 5
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e82f5ce0ca1e5aa0800000000000000
-      internalID: -6170465023549298461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_17
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 6
-        width: 28
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3afdbf6f0ee318e90800000000000000
-      internalID: -7025264807783964765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_18
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 38
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a2589f1a4000fd2c0800000000000000
-      internalID: -4404801890647702230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_19
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 112
-        width: 48
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e2574331c7cfa543a82cf6ccad007a0
-      internalID: -963161397
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_24
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 69
-        width: 54
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c937d1c0c5a2cd64596accbc8ebe04dd
-      internalID: -1676889271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_20
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 112
-        width: 48
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1d4a3f991a28f24daa8696a8f456a10
-      internalID: 352243739
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_21
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 112
-        width: 48
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05dc85d1fd81205498a7afa9e56ccef6
-      internalID: 1516400732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chococake_buttons_22
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 48
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 979a7fdf46f0dfd44aec6945dfc707ba
-      internalID: -1904499288
       vertices: []
       indices: 
       edges: []
@@ -695,34 +299,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      - key: SpriteEditor.SliceOnImport
+        value: False
     nameFileIdTable:
-      chococake_buttons_0: 7965473876742237719
       chococake_buttons_1: 1128918402266720914
-      chococake_buttons_10: 5506758101094037055
-      chococake_buttons_11: -7229855973975289643
-      chococake_buttons_12: -6729312278426512991
-      chococake_buttons_13: 5157787909843154716
-      chococake_buttons_14: -2183246380892294051
-      chococake_buttons_15: 8065828414158607628
-      chococake_buttons_16: -6170465023549298461
-      chococake_buttons_17: -7025264807783964765
-      chococake_buttons_18: -4404801890647702230
-      chococake_buttons_19: -963161397
       chococake_buttons_2: 6586171347401566121
-      chococake_buttons_20: 352243739
-      chococake_buttons_21: 1516400732
-      chococake_buttons_22: -1904499288
-      chococake_buttons_23: 1840652675
-      chococake_buttons_24: -1676889271
-      chococake_buttons_25: 1449231733
       chococake_buttons_3: 40424889106944498
       chococake_buttons_4: -2737887211092107357
       chococake_buttons_5: 1831463746964592770
-      chococake_buttons_6: 2156445964445523816
-      chococake_buttons_7: 4720518666163274862
-      chococake_buttons_8: -6288041680948117516
-      chococake_buttons_9: -2430654112489643081
+      chococake_dialogue_: 7965473876742237719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
