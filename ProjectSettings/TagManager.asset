@@ -43,5 +43,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Mommy
+    uniqueID: 3300866365
+    locked: 0
+  - name: Decoration
+    uniqueID: 80542007
+    locked: 0
+  - name: Player
+    uniqueID: 349611043
+    locked: 0
+  - name: Pillar
+    uniqueID: 3432869031
+    locked: 0
+  - name: Shoe
+    uniqueID: 3378899287
+    locked: 0
   m_RenderingLayers:
   - Default
