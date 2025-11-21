@@ -37,6 +37,10 @@ public class BossController : MonoBehaviour
     [SerializeField] private Slider timerBarSlider;
     [SerializeField] private GameObject bossFightUIPanel;
 
+    [Header("Transition")]
+    [SerializeField] private CanvasGroup fadePanel; 
+    [SerializeField] private float fadeDuration = 1.5f;
+
 
     private int lastAttackIndex = -1; 
     private bool isFighting = false;
@@ -50,13 +54,14 @@ public class BossController : MonoBehaviour
 
             if (timerBarSlider != null)
             {
-                timerBarSlider.value = fightTimer;
+                //timerBarSlider.value = fightTimer;
+                timerBarSlider.value = Mathf.Clamp(fightTimer, 0f, FightEndTime);
             }
 
-            if (fightTimer >= FightEndTime)
-            {
-                EndBossFight();
-            }
+            //if (fightTimer >= FightEndTime)
+            //{
+            //    EndBossFight();
+            //}
         }
     }
     
@@ -81,47 +86,36 @@ public class BossController : MonoBehaviour
         }
         StartCoroutine(AttackLoop());
     }
-    
+
     private IEnumerator AttackLoop()
     {
         while (isFighting)
         {
+            if (fightTimer >= FightEndTime)
+            {
+                if (timerBarSlider != null) timerBarSlider.value = FightEndTime;
+
+                EndBossFight();
+                yield break; 
+            }
+
             int nextAttack = ChooseNextAttack();
             lastAttackIndex = nextAttack;
 
             if (nextAttack == 3)
             {
-                
                 yield return StartCoroutine(Attack3_ShoeDrops());
             }
-
             else
             {
-              
-                if (nextAttack == 1) StartCoroutine(Attack1_Shoe());
-                if (nextAttack == 2) StartCoroutine(Attack2_FallingShoe());
+                if (nextAttack == 1) yield return StartCoroutine(Attack1_Shoe());
+                if (nextAttack == 2) yield return StartCoroutine(Attack2_FallingShoe());
 
-                
                 yield return new WaitForSeconds(Coodown);
             }
-
-            //switch (nextAttack)
-            //{
-            //    case 1:
-            //        StartCoroutine(Attack1_Shoe());
-            //        break;
-            //    case 2:
-            //        FallingShoe();
-            //        break;
-            //    case 3:
-            //        Attack3();
-            //        break;
-            //}
-
-            //yield return new WaitForSeconds(Coodown);
         }
     }
-  
+
     private int ChooseNextAttack()
     {
         int maxAttackID; 
@@ -158,8 +152,35 @@ public class BossController : MonoBehaviour
     {
         isFighting = false;
         Debug.Log("BOSS FIGHT ENDED! (Time limit reached)");
-        gameObject.SetActive(false);
-        Time.timeScale = 0f;
+        //gameObject.SetActive(false);
+        //Time.timeScale = 0f;
+        //SceneManager.LoadScene("EndingScene");
+        StopAllCoroutines();
+        
+
+        StartCoroutine(LoadSceneSequence());
+    }
+
+    private IEnumerator LoadSceneSequence()
+    {
+        if (fadePanel != null)
+        {
+            fadePanel.blocksRaycasts = true;
+        }
+
+        float timer = 0f;
+        while (timer < fadeDuration)
+        {
+            timer += Time.unscaledDeltaTime; 
+            if (fadePanel != null)
+            {
+                fadePanel.alpha = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            }
+            yield return null;
+        }
+
+        fadePanel.alpha = 1f;
+        Time.timeScale = 0f; 
         SceneManager.LoadScene("EndingScene");
     }
 

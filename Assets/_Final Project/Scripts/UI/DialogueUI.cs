@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System;
 using System.Text;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 
 public class DialogueUI : MonoBehaviour
@@ -42,7 +43,17 @@ public class DialogueUI : MonoBehaviour
         if (Instance != null) { Destroy(gameObject); }
         else { Instance = this; }
 
-        LoadConversation();
+        string currentScene = SceneManager.GetActiveScene().name;
+      
+
+        if (currentScene == "EndingScene") // µ√«® Õ∫«Ë“™◊ËÕ©“°®∫µ√ß°—∫∑’Ë§ÿ≥µ—Èß‰«È‰À¡
+        {
+            LoadEndingConversation(); // ‚À≈¥∫∑©“°®∫
+        }
+        else
+        {
+            LoadConversation(); 
+        }
 
         if (choiceButton1 != null)
         {
@@ -61,8 +72,19 @@ public class DialogueUI : MonoBehaviour
 
         dialoguePanel.SetActive(false);
     }
+    private void LoadEndingConversation()
+    {
+        tree = new DialogueTree();    
+       DialogueNode MomEndLine = new DialogueNode("Hmph. I thought you ainít got nothiní good in youÖ but that ass sure was fast. Next time you ainít goní be so lucky.", "Mom");
 
-    private void LoadConversation()
+       DialogueNode SonReply = new DialogueNode("(Smile and wipe your sweat)", "Jeab");
+
+        tree.rootNode = MomEndLine;
+
+        MomEndLine.AddChoice("", SonReply);
+    }
+
+        private void LoadConversation()
     {
         //    Mom: Mhm.Look who finally showed up.
         //Son: UhÖ Ma, didnít you go get groceries?
@@ -92,8 +114,8 @@ public class DialogueUI : MonoBehaviour
         tree = new DialogueTree();
         //∫∑∑”¥“
         DialogueNode MomLine1 = new DialogueNode("Mhm.Look who finally showed up.", "Mom");
-        DialogueNode SonLine1 = new DialogueNode("UhÖ Ma, didnít you go get groceries?", "Son");
-        DialogueNode SonLine2 = new DialogueNode(" Uh, I.. I was", "Son");
+        DialogueNode SonLine1 = new DialogueNode("UhÖ Ma, didnít you go get groceries?", "Jeab");
+        DialogueNode SonLine2 = new DialogueNode(" Uh, I.. I was", "Jeab");
         DialogueNode MomLine2 = new DialogueNode("Donít you run from me! Aunt Somsri said she saw your trifliní ass at the arcade!", "Mom");
         DialogueNode MomLine3End = new DialogueNode("An old lady crossiní the road? In the arcade? What road, huh? The one between the claw machine and the soda counter? You better bring your stupid ass back here before I show you what groceries feel like!", "Mom");
         //∫∑∑’ËµÈÕßµÕ∫
@@ -132,6 +154,7 @@ public class DialogueUI : MonoBehaviour
 
 
     }
+
     public void StartDialogue(Action onDialogueFinished)
     {
         this.onDialogueFinishedCallback = onDialogueFinished;

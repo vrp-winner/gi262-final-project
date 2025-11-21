@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections;
+
 
 public class Player : MonoBehaviour
 {
@@ -40,10 +42,12 @@ public class Player : MonoBehaviour
 
     public bool canMove = true;
     public bool IsDead => currentHp <= 0;
-
+    
+    [Header("Anim")]
     private PlayerControls controls;
     [SerializeField] private Animator anim;
 
+    [SerializeField] private float deathDuration = 1.5f;
 
     private void Awake()
     {
@@ -225,10 +229,26 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
+        if (!canMove) return;
         canMove = false;
         rb.linearVelocity = Vector2.zero;
-       
-        GameManager.Instance.ShowGameOverScreen(); 
-        spriteRenderer.enabled = false; 
+
+        if (anim != null)
+        {
+            anim.SetTrigger("die");     
+        }
+        StartCoroutine(DeathSequence());
+
+        //GameManager.Instance.ShowGameOverScreen(); 
+        //spriteRenderer.enabled = false; 
     }
+
+    private IEnumerator DeathSequence()
+    {
+       yield return new WaitForSeconds(deathDuration);
+
+       GameManager.Instance.ShowGameOverScreen();
+
+    }
+
 }
