@@ -8,10 +8,16 @@ public class ShoeAttack : MonoBehaviour
     [SerializeField] private float Speed = 15f;
     [SerializeField] private float DestroyShoe = 4f;
     [SerializeField] private int damage = 1;
-    
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip throwSound;
+    [Range(0f, 1f)][SerializeField] private float throwVolum = 1f;
+
+
     private Transform playerTarget;
     private Transform[] waitPoints;
     private Rigidbody2D rb;
+    private AudioSource audioSource;
 
     public void SetPlayerTarget(Transform target)
     {
@@ -28,6 +34,7 @@ public class ShoeAttack : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(AttackRoutine());
         Destroy(gameObject, DestroyShoe);
+        audioSource = GetComponent<AudioSource>();
     }
 
     private IEnumerator AttackRoutine()
@@ -43,6 +50,12 @@ public class ShoeAttack : MonoBehaviour
         }
         
         yield return new WaitForSeconds(waitTime);
+
+        if (audioSource != null && throwSound != null)
+        {
+            audioSource.PlayOneShot(throwSound);
+        }
+
         if (playerTarget != null)
         {
             Vector2 targetDirection = (playerTarget.position - transform.position).normalized;
@@ -81,6 +94,7 @@ public class ShoeAttack : MonoBehaviour
             {
                 player.TakeDamage(damage);
             }
+            Destroy(gameObject);
         }
     }
 }

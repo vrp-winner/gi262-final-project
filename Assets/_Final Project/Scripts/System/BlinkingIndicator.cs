@@ -6,16 +6,23 @@ using System.Collections;
 public class BlinkingIndicator : MonoBehaviour
 {
     [Header("Blink Settings")]
-    [SerializeField] private float blinkInterval = 0.2f; 
+    [SerializeField] private float blinkInterval = 0.2f;
+
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip blinkSound;
+    [Range(0f, 1f)][SerializeField] private float blickVolum = 1f;
+
 
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
 
-    
+
     public void StartBlinking(float totalDuration)
     {
        spriteRenderer = GetComponent<SpriteRenderer>();
+       audioSource = GetComponent<AudioSource>();
 
-       StartCoroutine(BlinkRoutine(totalDuration));
+        StartCoroutine(BlinkRoutine(totalDuration));
     }
 
     private IEnumerator BlinkRoutine(float duration)
@@ -25,8 +32,14 @@ public class BlinkingIndicator : MonoBehaviour
 
         while (timer < duration)
         {
-            
+
             spriteRenderer.enabled = isVisible;
+
+            if (isVisible && blinkSound != null)
+            {
+                audioSource.PlayOneShot(blinkSound);
+            }
+
             isVisible = !isVisible; 
 
             yield return new WaitForSeconds(blinkInterval);

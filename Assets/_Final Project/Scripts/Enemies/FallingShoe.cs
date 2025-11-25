@@ -13,6 +13,8 @@ public class FallingShoe : MonoBehaviour
     
     [Header("VFX")]
     [SerializeField] private GameObject ImpactEffect;
+    [SerializeField] private AudioClip fallSound;
+    [Range(0f, 1f)][SerializeField] private float fallVolume = 1.0f;
 
     void Start()
     {
@@ -53,7 +55,11 @@ public class FallingShoe : MonoBehaviour
             SpawnImpactEffect(impactPoint);
 
         }
-       
+        if (fallSound != null)
+        {
+            AudioSource.PlayClipAtPoint(fallSound, transform.position);
+        }
+
     }
     private void SpawnImpactEffect(Vector2 position)
     {

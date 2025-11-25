@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections;
 
-
+[RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
     [Header("Player Stats")]
@@ -33,6 +33,31 @@ public class Player : MonoBehaviour
     //[SerializeField] private Slider healthBarSlider;
     [SerializeField] private Slider timerBarSlider;
 
+    [Header("Audio Settings")] 
+    [SerializeField] private AudioClip[] jumpSound;
+    [Range(0f, 1f)][SerializeField] private float jumpVolume = 1.0f;
+
+    [SerializeField] private AudioClip hurtSound;
+    [Range(0f, 1f)][SerializeField] private float hurtVolume = 1.0f;
+
+    [SerializeField] private AudioClip deadSound;
+    [Range(0f, 1f)][SerializeField] private float deadVolume = 1.0f;
+
+    [SerializeField] private AudioClip[] walkSound;
+    [Range(0f, 1f)][SerializeField] private float walkVolume = 1.0f;
+    [SerializeField] private float stepRate = 0.3f;
+    private float nextStepTime = 0f;
+    private AudioSource audioSource;
+
+
+
+
+    [Header("Anim")]
+    private PlayerControls controls;
+    [SerializeField] private Animator anim;
+    [SerializeField] private float deathDuration = 1.5f;
+    public bool canMove = true;
+    public bool IsDead => currentHp <= 0;
 
     private int currentHp;
     private Rigidbody2D rb;
@@ -40,14 +65,8 @@ public class Player : MonoBehaviour
     private Vector2 moveInput;
     private bool isGrounded;
 
-    public bool canMove = true;
-    public bool IsDead => currentHp <= 0;
-    
-    [Header("Anim")]
-    private PlayerControls controls;
-    [SerializeField] private Animator anim;
 
-    [SerializeField] private float deathDuration = 1.5f;
+
 
     private void Awake()
     {
@@ -56,6 +75,7 @@ public class Player : MonoBehaviour
         controls = new PlayerControls();
         currentHp = maxHp;
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         //if (healthBarSlider != null)
         //{
@@ -109,6 +129,7 @@ public class Player : MonoBehaviour
         CheckGrounded();
         Animation();
         Flip();
+        Footsteps();
     }
         private void FixedUpdate()
     {
@@ -131,12 +152,14 @@ public class Player : MonoBehaviour
 
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
-
+        if (jumpSound.Length > 0)
+        {
+            int randomIndex = Random.Range(0, jumpSound.Length);
+            PlaySound(jumpSound[randomIndex]);
+        }
     }
-
 
     private void CheckGrounded()
     {
@@ -184,6 +207,7 @@ public class Player : MonoBehaviour
     {
         if (IsDead) return;
         {
+            PlaySound(hurtSound);
             if (isInstantKillMode)
             {
                 currentHp = 0;
@@ -223,6 +247,27 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Footsteps()
+    {
+        if (isGrounded && moveInput.x != 0 && !IsDead && canMove)
+        {
+            if (Time.time >= nextStepTime)
+            {
+                if (audioSource != null && walkSound.Length > 0)
+                {
+                    int randomIndex = Random.Range(0, walkSound.Length);
+                    AudioClip clipToPlay = walkSound[randomIndex];
+
+                    if (clipToPlay != null)
+                    {
+                        audioSource.PlayOneShot(clipToPlay, walkVolume);
+                    }
+                }
+                nextStepTime = Time.time + stepRate;
+            }
+        }
+    }
+
 
 
 
@@ -232,6 +277,7 @@ public class Player : MonoBehaviour
         if (!canMove) return;
         canMove = false;
         rb.linearVelocity = Vector2.zero;
+        PlaySound(deadSound);
 
         if (anim != null)
         {
@@ -241,6 +287,14 @@ public class Player : MonoBehaviour
 
         //GameManager.Instance.ShowGameOverScreen(); 
         //spriteRenderer.enabled = false; 
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip); 
+        }
     }
 
     private IEnumerator DeathSequence()

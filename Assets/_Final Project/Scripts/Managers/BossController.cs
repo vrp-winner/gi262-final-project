@@ -41,11 +41,27 @@ public class BossController : MonoBehaviour
     [SerializeField] private CanvasGroup fadePanel; 
     [SerializeField] private float fadeDuration = 1.5f;
 
+    [Header("Audio Settings")] 
+    [SerializeField] private AudioClip shoeAttackSpawnSound;
+    [Range(0f, 1f)][SerializeField] private float shoeAttackSpawnVolum = 1f;
+
+    [SerializeField] private AudioClip fallingShoeSpawnSound;
+    [Range(0f, 1f)][SerializeField] private float fallingShoeSpawnVolum = 1f;
+
+    [SerializeField] private AudioClip shoeDropSound;
+    [Range(0f, 1f)][SerializeField] private float shoeDropVolum = 1f;
+
+    private AudioSource audioSource;
+
 
     private int lastAttackIndex = -1; 
     private bool isFighting = false;
     private float fightTimer = 0f;
 
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if (isFighting)
@@ -199,6 +215,7 @@ public class BossController : MonoBehaviour
         }
         for (int i = 0; i < shoeCount; i++)
         {
+            PlaySound(shoeAttackSpawnSound);
             Transform randomSpawnPoint = shoeSpawnPoints[Random.Range(0, shoeSpawnPoints.Length)];
             GameObject shoeInstance = Instantiate(shoePrefab, randomSpawnPoint.position, Quaternion.identity);
             ShoeAttack shoe = shoeInstance.GetComponent<ShoeAttack>(); 
@@ -213,12 +230,13 @@ public class BossController : MonoBehaviour
     {
         if (fallingShoePrefab == null || fallingShoeSpawnPoints.Length == 0)
         {
-            Debug.Log("Boss uses Attack 2: FallingShoe!");
+            
             yield break;
         }
 
         foreach (Transform spawnPoint in fallingShoeSpawnPoints)
         {
+            PlaySound(fallingShoeSpawnSound);
             Instantiate(fallingShoePrefab, spawnPoint.position, Quaternion.identity);
         }
     }
@@ -248,6 +266,7 @@ public class BossController : MonoBehaviour
     }
     private IEnumerator RainSide(Transform spawnArea)
     {
+        PlaySound(shoeDropSound);
         float timer = 0f;
 
         while (timer < attack3Duration)
@@ -261,6 +280,14 @@ public class BossController : MonoBehaviour
             yield return new WaitForSeconds(DropRate);
 
             timer += DropRate;
+        }
+
+    }
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
         }
     }
 }
