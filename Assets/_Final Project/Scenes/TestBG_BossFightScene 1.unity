@@ -1883,7 +1883,7 @@ GameObject:
   - component: {fileID: 473116480}
   - component: {fileID: 473116482}
   - component: {fileID: 473116483}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bg_House_Pillar_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2802,7 +2802,7 @@ Transform:
   m_GameObject: {fileID: 636609350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.610336, y: 2.5000002, z: -10}
+  m_LocalPosition: {x: -38.333336, y: 2.5000002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2894,7 +2894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 636710931}
   - component: {fileID: 636710932}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bg_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6870,7 +6870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1562784294}
   - component: {fileID: 1562784295}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bg_Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8721,7 +8721,7 @@ GameObject:
   - component: {fileID: 1976309985}
   - component: {fileID: 1976309984}
   - component: {fileID: 1976309983}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Blocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

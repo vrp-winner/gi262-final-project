@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quite
+  m_text: 'Quit
 
 '
   m_isRightToLeft: 0
