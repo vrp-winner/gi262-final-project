@@ -5114,7 +5114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4176d43024c66541a88ed2c9456f8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  maxHp: 99999
+  maxHp: 5
   moveSpeed: 9
   jumpForce: 18
   interactRadius: 1.5
@@ -5141,7 +5141,7 @@ MonoBehaviour:
   walkSound:
   - {fileID: 8300000, guid: e9a9f5f9e447a634694bba7ac6585a84, type: 3}
   - {fileID: 8300000, guid: 196ed50d72f44d244a8899d38d5af0b1, type: 3}
-  walkVolume: 0.25
+  walkVolume: 0.65
   stepRate: 0.3
   anim: {fileID: 1197734026}
   deathDuration: 1

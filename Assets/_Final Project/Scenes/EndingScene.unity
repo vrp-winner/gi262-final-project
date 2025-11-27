@@ -3252,7 +3252,7 @@ MonoBehaviour:
   creditsPanel: {fileID: 1421642518}
   creditsText: {fileID: 283981370}
   fadePanel: {fileID: 2139960504}
-  fadeDuration: 1
+  fadeDuration: 1.5
   scrollSpeed: 50
   stopPosY: 1500
   mainMenuName: MainMenu
