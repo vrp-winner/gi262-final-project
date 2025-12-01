@@ -8,7 +8,7 @@ public class FallingShoe : MonoBehaviour
     [SerializeField] private float DestroyShoe = 5f;
 
     [Header("Fall Logic")]
-    [SerializeField] private float waitBeforeFalling = 1f; 
+    //[SerializeField] private float waitBeforeFalling = 1f; 
     private Rigidbody2D rb;
     
     [Header("VFX")]
@@ -16,25 +16,34 @@ public class FallingShoe : MonoBehaviour
     [SerializeField] private AudioClip fallSound;
     [Range(0f, 1f)][SerializeField] private float fallVolume = 1.0f;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
             rb.isKinematic = true;
-            StartCoroutine(FallRoutine());
+            //StartCoroutine(FallRoutine());
             Destroy(gameObject, DestroyShoe);
         }
     }
-    private IEnumerator FallRoutine()
-    {
-        yield return new WaitForSeconds(waitBeforeFalling);
 
+    public void Drop()
+    {
         if (rb != null)
         {
-            rb.isKinematic = false;
+            rb.isKinematic = false; 
         }
+        Destroy(gameObject, DestroyShoe);
     }
+    //private IEnumerator FallRoutine()
+    //{
+    //    yield return new WaitForSeconds(waitBeforeFalling);
+
+    //    if (rb != null)
+    //    {
+    //        rb.isKinematic = false;
+    //    }
+    //}
     private void OnCollisionEnter2D(Collision2D collision)
 
     {

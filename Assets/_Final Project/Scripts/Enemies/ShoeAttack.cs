@@ -4,9 +4,10 @@ using System.Collections;
 public class ShoeAttack : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float waitTime = 1f;
+    //[SerializeField] private float waitTime = 1f;
     [SerializeField] private float Speed = 15f;
     [SerializeField] private float DestroyShoe = 4f;
+    [SerializeField] private float floatSpeed = 5f;
     [SerializeField] private int damage = 1;
 
     [Header("Audio")]
@@ -15,80 +16,78 @@ public class ShoeAttack : MonoBehaviour
 
 
     private Transform playerTarget;
-    private Transform[] waitPoints;
+    //private Transform[] waitPoints;
     private Rigidbody2D rb;
     private AudioSource audioSource;
+    private bool isLaunched = false;
 
     public void SetPlayerTarget(Transform target)
     {
         playerTarget = target;
     }
     
-    public void SetRestPoints(Transform[] points)
-    {
-        waitPoints = points;
-    }
+    //public void SetRestPoints(Transform[] points)
+    //{
+    //    waitPoints = points;
+    //}
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        StartCoroutine(AttackRoutine());
-        Destroy(gameObject, DestroyShoe);
+        //StartCoroutine(AttackRoutine());
+        //Destroy(gameObject, DestroyShoe);
         audioSource = GetComponent<AudioSource>();
     }
 
-    private IEnumerator AttackRoutine()
+    public void MoveToWaitPoint(Transform waitPoint)
     {
-        Transform nearestRest = GetNearestRestPoint();
-        if (nearestRest != null)
+        StartCoroutine(GoToWaitPointRoutine(waitPoint));
+    }
+
+
+    private IEnumerator GoToWaitPointRoutine(Transform targetPoint)
+    {
+        if (targetPoint != null)
         {
-            Vector2 dir = (nearestRest.position - transform.position).normalized;
-            rb.linearVelocity = dir * Speed;
+            while (Vector2.Distance(transform.position, targetPoint.position) > 0.5f && !isLaunched)
+            {
+                Vector2 dir = (targetPoint.position - transform.position).normalized;
+                rb.linearVelocity = dir * floatSpeed;
+                yield return null;
+            }
 
-            yield return new WaitUntil(() => Vector2.Distance(transform.position, nearestRest.position) < 0.5f);
-            rb.linearVelocity = Vector2.zero;
+            if (!isLaunched)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
         }
-        
-        yield return new WaitForSeconds(waitTime);
+    }
 
+    public void LaunchAtPlayer()
+    {
+        isLaunched = true;
         if (audioSource != null && throwSound != null)
         {
-            audioSource.PlayOneShot(throwSound);
+            audioSource.PlayOneShot(throwSound, throwVolum);
         }
 
         if (playerTarget != null)
         {
             Vector2 targetDirection = (playerTarget.position - transform.position).normalized;
             rb.linearVelocity = targetDirection * Speed;
+
+            float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
+        Destroy(gameObject, DestroyShoe);
     }
-    
-    private Transform GetNearestRestPoint()
-    {
-        if (waitPoints == null || waitPoints.Length == 0)
-            return null;
 
-        Transform nearest = waitPoints[0];
-        float minDist = Vector2.Distance(transform.position, nearest.position);
 
-        foreach (Transform t in waitPoints)
-        {
-            float dist = Vector2.Distance(transform.position, t.position);
-            if (dist < minDist)
-            {
-                minDist = dist;
-                nearest = t;
-            }
-        }
-
-        return nearest;
-    }
-    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
             Player player = other.GetComponent<Player>();
             if (player != null)
             {

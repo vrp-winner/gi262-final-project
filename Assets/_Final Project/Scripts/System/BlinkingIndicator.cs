@@ -37,7 +37,7 @@ public class BlinkingIndicator : MonoBehaviour
 
             if (isVisible && blinkSound != null)
             {
-                audioSource.PlayOneShot(blinkSound);
+                audioSource.PlayOneShot(blinkSound , blickVolum);
             }
 
             isVisible = !isVisible; 

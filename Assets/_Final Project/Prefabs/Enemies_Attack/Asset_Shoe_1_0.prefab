@@ -107,11 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86bbe10c05067744399ee913a9059532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShoeAttack
-  waitTime: 1
-  Speed: 20
+  Speed: 40
   DestroyShoe: 4
+  floatSpeed: 40
   damage: 1
   throwSound: {fileID: 8300000, guid: fcaf276438b2e7e43bfa4bc3b620416b, type: 3}
+  throwVolum: 1
 --- !u!60 &3451758942429935193
 PolygonCollider2D:
   m_ObjectHideFlags: 0
