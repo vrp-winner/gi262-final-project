@@ -47,10 +47,8 @@ public class Player : MonoBehaviour
     [Range(0f, 1f)][SerializeField] private float walkVolume = 1.0f;
     [SerializeField] private float stepRate = 0.3f;
     private float nextStepTime = 0f;
+    
     private AudioSource audioSource;
-
-
-
 
     [Header("Anim")]
     private PlayerControls controls;
@@ -64,9 +62,6 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Vector2 moveInput;
     private bool isGrounded;
-
-
-
 
     private void Awake()
     {
@@ -99,27 +94,6 @@ public class Player : MonoBehaviour
 
     }
 
-    private void OnInteract()
-    {
-              Collider2D hit = Physics2D.OverlapCircle(transform.position, interactRadius, interactableLayer);
-        
-        if (hit != null)
-        {
-            IInteractable interactableObject = hit.GetComponent<IInteractable>();
-            
-            if (interactableObject != null)
-            {
-                interactableObject._Interact(); 
-            }
-        }
-    }
-    private void OnDrawGizmos() //Gizmos เหมือนเอาไว้วาดภาพจำลองให้เห็นภาพ เห็นเส้น เห็นวง ประมาณนั้น (มั้ง) แบบอันนี้ก็ให้มันทำวงกลม
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, interactRadius);
-    }
-
-
     private void OnEnable() => controls.Player.Enable();
     private void OnDisable() => controls.Player.Disable();
 
@@ -131,10 +105,32 @@ public class Player : MonoBehaviour
         Flip();
         Footsteps();
     }
-        private void FixedUpdate()
+    
+    private void FixedUpdate()
     {
         Move();
         HandleGravity();
+    }
+    
+    private void OnDrawGizmos() //Gizmos เหมือนเอาไว้วาดภาพจำลองให้เห็นภาพ เห็นเส้น เห็นวง ประมาณนั้น (มั้ง) แบบอันนี้ก็ให้มันทำวงกลม
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, interactRadius);
+    }
+
+    private void OnInteract()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, interactRadius, interactableLayer);
+        
+        if (hit != null)
+        {
+            IInteractable interactableObject = hit.GetComponent<IInteractable>();
+            
+            if (interactableObject != null)
+            {
+                interactableObject._Interact(); 
+            }
+        }
     }
 
     public void Move()
@@ -157,7 +153,15 @@ public class Player : MonoBehaviour
         if (jumpSound.Length > 0)
         {
             int randomIndex = Random.Range(0, jumpSound.Length);
-            PlaySound(jumpSound[randomIndex]);
+            PlaySound(jumpSound[randomIndex], jumpVolume);
+        }
+    }
+
+    private void HandleVariableJump()
+    {
+        if (rb.linearVelocity.y > 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * JumpMultiplier);
         }
     }
 
@@ -166,40 +170,23 @@ public class Player : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, groundLayer);
     }
 
-
     private void HandleGravity()
     {
-
         if (rb.linearVelocity.y < 0)
-        {
             rb.gravityScale = baseGravityScale * fallGravityMultiplier;
-        }
+        
         else
-        {
             rb.gravityScale = baseGravityScale;
-        }
+        
     }
-
-    private void HandleVariableJump()
-    {
-        if (rb.linearVelocity.y > 0)
-        {
-
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * JumpMultiplier);
-        }
-    }
-
 
     private void Flip()
     {
-
         if ((isFacingRight && moveInput.x < 0) || (!isFacingRight && moveInput.x > 0))
         {
             isFacingRight = !isFacingRight;
             //spriteRenderer.flipX = !isFacingRight;
             spriteRenderer.flipX = isFacingRight;
-
-
         }
     }
 
@@ -207,7 +194,8 @@ public class Player : MonoBehaviour
     {
         if (IsDead) return;
         {
-            PlaySound(hurtSound);
+            PlaySound(hurtSound, hurtVolume);
+            
             if (isInstantKillMode)
             {
                 currentHp = 0;
@@ -220,31 +208,24 @@ public class Player : MonoBehaviour
             }
 
             if (HealthPointUI.Instance != null) 
-            {
                 HealthPointUI.Instance.UpdateHealth(currentHp); 
-            }
+            
             if (currentHp <= 0)
                 Die();
         }
     }
 
-
     private void Animation()
     {
-        
         anim.SetBool("isGrounded", isGrounded);
-
         
         bool isWalking = moveInput.x != 0f;
 
         if (isGrounded)
-        {
             anim.SetBool("isWalking", isWalking);
-        }
+        
         else
-        {
             anim.SetBool("isWalking", false);
-        }
     }
 
     private void Footsteps()
@@ -259,50 +240,42 @@ public class Player : MonoBehaviour
                     AudioClip clipToPlay = walkSound[randomIndex];
 
                     if (clipToPlay != null)
-                    {
                         audioSource.PlayOneShot(clipToPlay, walkVolume);
-                    }
                 }
+                
                 nextStepTime = Time.time + stepRate;
             }
         }
     }
 
-
-
-
-
     private void Die()
     {
         if (!canMove) return;
+        
         canMove = false;
         rb.linearVelocity = Vector2.zero;
-        PlaySound(deadSound);
+        
+        PlaySound(deadSound, deadVolume);
 
         if (anim != null)
-        {
             anim.SetTrigger("die");     
-        }
+        
         StartCoroutine(DeathSequence());
 
         //GameManager.Instance.ShowGameOverScreen(); 
         //spriteRenderer.enabled = false; 
     }
 
-    private void PlaySound(AudioClip clip)
-    {
-        if (audioSource != null && clip != null)
-        {
-            audioSource.PlayOneShot(clip); 
-        }
-    }
-
     private IEnumerator DeathSequence()
     {
        yield return new WaitForSeconds(deathDuration);
-
        GameManager.Instance.ShowGameOverScreen();
 
     }
 
+    private void PlaySound(AudioClip clip, float volume)
+    {
+        if (audioSource != null && clip != null)
+            audioSource.PlayOneShot(clip, volume); 
+    }
 }

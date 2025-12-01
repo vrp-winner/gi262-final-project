@@ -10,7 +10,7 @@ public class BlinkingIndicator : MonoBehaviour
 
     [Header("Audio Settings")]
     [SerializeField] private AudioClip blinkSound;
-    [Range(0f, 1f)][SerializeField] private float blickVolum = 1f;
+    [Range(0f, 1f)][SerializeField] private float blinkVolume = 1f;
 
 
     private SpriteRenderer spriteRenderer;
@@ -19,8 +19,8 @@ public class BlinkingIndicator : MonoBehaviour
 
     public void StartBlinking(float totalDuration)
     {
-       spriteRenderer = GetComponent<SpriteRenderer>();
-       audioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
 
         StartCoroutine(BlinkRoutine(totalDuration));
     }
@@ -37,7 +37,7 @@ public class BlinkingIndicator : MonoBehaviour
 
             if (isVisible && blinkSound != null)
             {
-                audioSource.PlayOneShot(blinkSound , blickVolum);
+                audioSource.PlayOneShot(blinkSound, blinkVolume);
             }
 
             isVisible = !isVisible; 

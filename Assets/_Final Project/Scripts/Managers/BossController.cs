@@ -15,7 +15,7 @@ public class BossController : MonoBehaviour
     [SerializeField] private GameObject shoePrefab;
     [SerializeField] private Transform[] shoeSpawnPoints;
     [SerializeField] private Transform[] shoeWaitingPoints;
-    [SerializeField] private float Coodown = 3f;
+    [SerializeField] private float cooldown = 3f;
     [SerializeField] private float animDuration = 1.0f;
 
     [Header("Attack 2 (FallingShoe)")]
@@ -47,13 +47,13 @@ public class BossController : MonoBehaviour
 
     [Header("Audio Settings")]
     [SerializeField] private AudioClip shoeAttackSpawnSound;
-    [Range(0f, 1f)][SerializeField] private float shoeAttackSpawnVolum = 1f;
+    [Range(0f, 1f)][SerializeField] private float shoeAttackSpawnVolume = 1f;
 
     [SerializeField] private AudioClip fallingShoeSpawnSound;
-    [Range(0f, 1f)][SerializeField] private float fallingShoeSpawnVolum = 1f;
+    [Range(0f, 1f)][SerializeField] private float fallingShoeSpawnVolume = 1f;
 
     [SerializeField] private AudioClip shoeDropSound;
-    [Range(0f, 1f)][SerializeField] private float shoeDropVolum = 1f;
+    [Range(0f, 1f)][SerializeField] private float shoeDropVolume = 1f;
    
     [Header("BGM Settings")]
     [SerializeField] private AudioSource bgmAudioSource; 
@@ -131,15 +131,15 @@ public class BossController : MonoBehaviour
             {
                 if (nextAttack == 1) yield return StartCoroutine(Attack1_Shoe_Sequence());
                 if (nextAttack == 2) yield return StartCoroutine(Attack2_FallingShoe());
-                float currentCooldown = Coodown;
+                float currentCooldown = cooldown;
 
                 if (fightTimer >= phase3StartTime)
                 {
-                    currentCooldown = Coodown * 0.5f;
+                    currentCooldown = cooldown * 0.5f;
                 }
                 else if (fightTimer >= phase2StartTime)
                 {
-                    currentCooldown = Coodown * 0.8f;
+                    currentCooldown = cooldown * 0.8f;
                 }
                 yield return new WaitForSeconds(currentCooldown);
             }
@@ -267,8 +267,6 @@ public class BossController : MonoBehaviour
 
     public void SpawnFallingShoeEvent()
     {
-        Debug.Log(">>> เสก <<<");
-
         currentFallingShoes.Clear();
         PlaySound(fallingShoeSpawnSound);
 
@@ -289,7 +287,7 @@ public class BossController : MonoBehaviour
 
     public void DropFallingShoeEvent()
     {
-        Debug.Log(">>> สั่งร่วงแล้วจ้า! <<<");
+        
         foreach (FallingShoe shoe in currentFallingShoes)
         {
             if (shoe != null) shoe.Drop();

@@ -12,7 +12,7 @@ public class ShoeAttack : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip throwSound;
-    [Range(0f, 1f)][SerializeField] private float throwVolum = 1f;
+    [Range(0f, 1f)][SerializeField] private float throwVolume = 1f;
 
 
     private Transform playerTarget;
@@ -68,7 +68,7 @@ public class ShoeAttack : MonoBehaviour
         isLaunched = true;
         if (audioSource != null && throwSound != null)
         {
-            audioSource.PlayOneShot(throwSound, throwVolum);
+            audioSource.PlayOneShot(throwSound, throwVolume);
         }
 
         if (playerTarget != null)
@@ -81,7 +81,6 @@ public class ShoeAttack : MonoBehaviour
         }
         Destroy(gameObject, DestroyShoe);
     }
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -5024,7 +5024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4176d43024c66541a88ed2c9456f8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  maxHp: 70
+  maxHp: 5
   moveSpeed: 9
   jumpForce: 18
   interactRadius: 1.5
@@ -9783,7 +9783,7 @@ MonoBehaviour:
   - {fileID: 930014389}
   - {fileID: 420419565}
   - {fileID: 420419565}
-  Coodown: 2
+  cooldown: 3
   animDuration: 4
   fallingShoePrefab: {fileID: 7844137657401149630, guid: 1f489e6828cd681468d00455204fcc64, type: 3}
   fallingShoeSpawnPoints:
@@ -9806,11 +9806,11 @@ MonoBehaviour:
   fadePanel: {fileID: 814654247}
   fadeDuration: 1.5
   shoeAttackSpawnSound: {fileID: 8300000, guid: 95b990a00e7875d49952111f2c512658, type: 3}
-  shoeAttackSpawnVolum: 0.54
+  shoeAttackSpawnVolume: 1
   fallingShoeSpawnSound: {fileID: 8300000, guid: 95b990a00e7875d49952111f2c512658, type: 3}
-  fallingShoeSpawnVolum: 0.53
+  fallingShoeSpawnVolume: 1
   shoeDropSound: {fileID: 8300000, guid: 95b990a00e7875d49952111f2c512658, type: 3}
-  shoeDropVolum: 0.49
+  shoeDropVolume: 1
   bgmAudioSource: {fileID: 1309622210}
   normalSpeed: 1
   phase2Speed: 1.2
