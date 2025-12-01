@@ -90,6 +90,9 @@ public class BossController : MonoBehaviour
 
     public void StartBossFight()
     {
+        Cursor.visible = false; 
+        Cursor.lockState = CursorLockMode.Locked;
+        
         if (isFighting) return;
 
         if (bossFightUIPanel != null) bossFightUIPanel.SetActive(true);
@@ -249,6 +252,8 @@ public class BossController : MonoBehaviour
         }
 
         if (fadePanel != null) fadePanel.alpha = 1f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
         SceneManager.LoadScene("EndingScene");
     }

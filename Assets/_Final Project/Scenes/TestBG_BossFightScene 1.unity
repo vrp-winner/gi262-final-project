@@ -1831,7 +1831,7 @@ Transform:
   m_GameObject: {fileID: 420419564}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.17, y: 8.35, z: 0}
+  m_LocalPosition: {x: -6.3, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4147,7 +4147,7 @@ Transform:
   m_GameObject: {fileID: 930014388}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.63, y: 8.900001, z: 0}
+  m_LocalPosition: {x: -24.5, y: 10.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6009,7 +6009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSound
   clickSound: {fileID: 8300000, guid: 3b9bf84d5d059d54ab4ff4a150a44a82, type: 3}
-  hoverSound: {fileID: 8300000, guid: 0f31c85052d6bbb439d971d1769558e7, type: 3}
+  hoverSound: {fileID: 0}
 --- !u!82 &1308858807
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7385,7 +7385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSound
   clickSound: {fileID: 8300000, guid: 3b9bf84d5d059d54ab4ff4a150a44a82, type: 3}
-  hoverSound: {fileID: 8300000, guid: 0f31c85052d6bbb439d971d1769558e7, type: 3}
+  hoverSound: {fileID: 0}
 --- !u!82 &1576902762
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7844,7 +7844,7 @@ Transform:
   m_GameObject: {fileID: 1664810379}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 6, z: 0}
+  m_LocalPosition: {x: 6.5, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9231,7 +9231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSound
   clickSound: {fileID: 8300000, guid: 3b9bf84d5d059d54ab4ff4a150a44a82, type: 3}
-  hoverSound: {fileID: 8300000, guid: 0f31c85052d6bbb439d971d1769558e7, type: 3}
+  hoverSound: {fileID: 0}
 --- !u!82 &1916946353
 AudioSource:
   m_ObjectHideFlags: 0

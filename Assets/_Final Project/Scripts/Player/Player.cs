@@ -252,6 +252,9 @@ public class Player : MonoBehaviour
     {
         if (!canMove) return;
         
+        Cursor.visible = true; 
+        Cursor.lockState = CursorLockMode.None;
+        
         canMove = false;
         rb.linearVelocity = Vector2.zero;
         
