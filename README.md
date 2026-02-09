@@ -1,16 +1,16 @@
-# Ijeab - 2D Survival Dodging Game
+Ijeab - 2D Survival Dodging Game
 **Project for Gi 262 Data Structure**
 **https://pistacio-inc.itch.io/ijeab**
 
 ---------------------------------------------------------------------------------------------------------------------------
-###Project Description
+Project Description
 A 2D survival game focused on dodging enemy attacks until the end of the stage.
 * **Data Structure Application:** Implemented **Linked List** to manage the dialogue system for efficient text sequencing.
 * **Technical Highlights:** Utilized **Coroutines** for managing enemy wave sequences and **Cinemachine** for advanced camera behavior to achieve "Hollow Knight" style gameplay.
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-* #Team Roles
+Team Roles
 * **Brocoliii:** Lead Mechanic Programmer - Responsible for the core game logic and entire gameplay structure.
 * **vrp-winner:** Assisted in code development and secondary systems support.
 * **YodkhwanA** Responsible for character sprites, environment design, and overall visual assets.
@@ -27,4 +27,4 @@ A 2D survival game focused on dodging enemy attacks until the end of the stage.
       <img src="https://github.com/user-attachments/assets/664c711a-0597-4208-9a42-a20f287023e3" width="280" alt="Jeab" />
     </td>
   </tr>
-</table>/>
+</table>/
