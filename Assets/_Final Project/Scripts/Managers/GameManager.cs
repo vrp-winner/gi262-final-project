@@ -20,14 +20,6 @@ public class GameManager : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
             Time.timeScale = 0f;
-            BossController boss = FindFirstObjectByType<BossController>();
-            if (boss != null && AnalyticsManager.Instance != null)
-            {
-                float timePlayed = boss.GetFightTimer();
-                int currentPhase = boss.GetCurrentPhase();
-
-                AnalyticsManager.Instance.LogBalancingData(timePlayed, currentPhase, false);
-            }
         }
     }
 

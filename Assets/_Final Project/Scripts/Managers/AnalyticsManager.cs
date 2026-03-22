@@ -21,7 +21,6 @@ public class AnalyticsManager : MonoBehaviour
 
         try
         {
-            // ลบ options ออก แล้วกลับมาใช้คำสั่งเบสิกที่เสถียรที่สุด
             await UnityServices.InitializeAsync();
             AnalyticsService.Instance.StartDataCollection();
             Debug.Log("<color=green>Unity Analytics Initialized Successfully!</color>");
