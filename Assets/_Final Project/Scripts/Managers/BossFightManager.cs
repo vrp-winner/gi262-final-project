@@ -9,6 +9,7 @@ public class BossFightManager : MonoBehaviour
 
     private int currentWave = 0;
     private bool isFighting = false;
+    private float fightStartTime;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class BossFightManager : MonoBehaviour
     {
         if (isFighting) return;
         isFighting = true;
+        fightStartTime = Time.time;
         currentWave = 0;
 
         Debug.Log("Fight started!");
@@ -83,10 +85,23 @@ public class BossFightManager : MonoBehaviour
         }
     }
 
-    public void EndGame(bool isWin)
+    public void EndGame(bool win)
     {
+        float totalTime = Time.time - fightStartTime;
+
+        if (AnalyticsManager.Instance != null)
+        {
+            AnalyticsManager.Instance.LogBalancingData(totalTime, currentWave, win);
+        }
+
         isFighting = false;
-        boss.StopSpawning();
-        Debug.Log(isWin ? "You Win!" : "You Lose!");
+        if (win)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EndingScene");
+        }
+        else
+        {
+            GameManager.Instance.ShowGameOverScreen();
+        }
     }
 }

@@ -223,6 +223,10 @@ public class BossController : MonoBehaviour
         {
             bgmAudioSource.Stop();
         }
+        if (AnalyticsManager.Instance != null)
+        {
+            AnalyticsManager.Instance.LogBalancingData(fightTimer, 3, true);
+        }
 
         StartCoroutine(LoadSceneSequence());
     }
@@ -363,5 +367,12 @@ public class BossController : MonoBehaviour
         {
             bgmAudioSource.pitch = normalSpeed; 
         }
+    }
+    public float GetFightTimer() { return fightTimer; }
+    public int GetCurrentPhase()
+    {
+        if (fightTimer >= phase3StartTime) return 3;
+        if (fightTimer >= phase2StartTime) return 2;
+        return 1;
     }
 }
